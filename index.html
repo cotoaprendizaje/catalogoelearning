@@ -4,10 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Cursos E-learning — COTO CICSA</title>
-  <meta name="description" content="Catálogo de cursos e-learning de COTO CICSA — 84 cursos, 20 categorías, Edición 2026">
+  <meta name="description" content="Catálogo de cursos e-learning de COTO CICSA — Edición 2026">
+  <meta name="author" content="COTO CICSA — Dirección de Recursos Humanos">
+
+  <!-- Open Graph (preview al compartir por mail, WhatsApp, Slack, etc.) -->
   <meta property="og:title"       content="Catálogo e-learning — COTO CICSA">
-  <meta property="og:description" content="84 cursos · 20 categorías · Formación interna para el equipo COTO CICSA">
+  <meta property="og:description" content="Formación interna para el equipo COTO CICSA · Edición 2026">
   <meta property="og:type"        content="website">
+  <meta property="og:image"       content="img/logo-coto.png">
+  <meta property="og:image:alt"   content="Logo de COTO CICSA">
+  <meta property="og:locale"      content="es_AR">
+  <meta property="og:site_name"   content="COTO CICSA — Aprendizaje">
+  <!-- og:url: completar con la URL final cuando esté publicado -->
+  <!-- <meta property="og:url" content="https://..."> -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Catálogo e-learning — COTO CICSA">
+  <meta name="twitter:description" content="Formación interna para el equipo COTO CICSA · Edición 2026">
+  <meta name="twitter:image"       content="img/logo-coto.png">
+
   <meta name="theme-color"        content="#162036">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23162036'/><text y='23' x='16' text-anchor='middle' font-size='18' font-family='Arial' font-weight='bold' fill='white'>e</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,8 +33,8 @@
 </head>
 <body>
 
-<!-- Cursor emoji personalizado (desktop) -->
-<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<!-- Skip link para accesibilidad (visible al recibir foco con Tab) -->
+<a href="#hero" class="skip-link">Saltar al contenido principal</a>
 
 <!-- Barra de progreso de scroll -->
 <div id="scroll-progress" aria-hidden="true"></div>
@@ -47,38 +63,71 @@
       </a>
     </div>
 
-    <nav class="topnav-menu" aria-label="Menú principal">
-      <a href="#hero"     class="active">Inicio</a>
+    <nav class="topnav-menu" aria-label="Menú principal" id="topnavMenu">
+      <a href="#hero" class="active">Inicio</a>
       <a href="#indice">📋 Índice</a>
       <a href="#cajas">Cursos</a>
       <a href="#contacto">Contacto</a>
     </nav>
 
-    <div class="dark-toggle-wrap">
-      <span class="dark-toggle-icon" id="darkIcon" aria-hidden="true">☀️</span>
-      <div class="dark-toggle"
-           id="darkToggle"
-           role="switch"
-           aria-checked="false"
-           aria-label="Modo oscuro"
-           tabindex="0"></div>
-    </div>
+    <div class="topnav-right">
+      <div class="dark-toggle-wrap">
+        <span class="dark-toggle-icon" id="darkIcon" aria-hidden="true">☀️</span>
+        <div class="dark-toggle"
+             id="darkToggle"
+             role="switch"
+             aria-checked="false"
+             aria-label="Modo oscuro"
+             tabindex="0"></div>
+      </div>
 
-    <div class="topnav-search-wrap" role="search">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-        <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M9.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <label for="navSearch" class="sr-only">Buscar curso</label>
-      <input type="search"
-             id="navSearch"
-             placeholder="Buscar curso…"
-             autocomplete="off"
-             aria-label="Buscar curso en el catálogo">
+      <div class="topnav-search-wrap" role="search">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <label for="navSearch" class="sr-only">Buscar curso</label>
+        <input type="search"
+               id="navSearch"
+               placeholder="Buscar curso…"
+               autocomplete="off"
+               aria-label="Buscar curso en el catálogo">
+      </div>
+
+      <!-- Botón hamburguesa (solo mobile) -->
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
   </div>
 </header>
+
+<!-- Menú mobile desplegable -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <div class="mobile-search-wrap" role="search">
+      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <label for="mobileSearch" class="sr-only">Buscar curso</label>
+      <input type="search"
+             id="mobileSearch"
+             placeholder="Buscar curso…"
+             autocomplete="off"
+             aria-label="Buscar curso en el catálogo">
+    </div>
+    <nav class="mobile-menu-nav" aria-label="Menú principal (mobile)">
+      <a href="#hero">🏠 Inicio</a>
+      <a href="#indice">📋 Índice</a>
+      <a href="#cajas">📚 Cursos</a>
+      <a href="#contacto">✉️ Contacto</a>
+      <a href="catalogo.pdf" download>📥 Descargar PDF</a>
+    </nav>
+  </div>
+</div>
+<div class="mobile-menu-backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
 
 
 <!-- ═══════════════════════════════════
@@ -116,17 +165,17 @@
 
     <div class="hero-stats-panel" aria-label="Estadísticas del catálogo">
       <div class="hero-stat-card" style="--accent: linear-gradient(to right, #F02850, #097bb3);">
-        <strong class="stat-counter" data-count="84">0</strong>
+        <strong class="stat-counter" data-count-source="cursos">0</strong>
         <span>cursos</span>
         <p>Disponibles en la plataforma</p>
       </div>
       <div class="hero-stat-card" style="--accent: linear-gradient(to right, #8228C8, #1E78DC);">
-        <strong class="stat-counter" data-count="20">0</strong>
+        <strong class="stat-counter" data-count-source="categorias">0</strong>
         <span>categorías</span>
         <p>Áreas de formación</p>
       </div>
       <div class="hero-stat-card" style="--accent: linear-gradient(to right, #00C88C, #1EAADC);">
-        <strong class="stat-counter" data-count="20000" data-prefix="+" data-separator=".">0</strong>
+        <strong class="stat-counter" data-count="19800" data-prefix="+" data-separator=".">0</strong>
         <span>usuarios</span>
         <p>Colaboradores en la plataforma</p>
       </div>
@@ -143,42 +192,19 @@
 
 <!-- ═══════════════════════════════════
      CATNAV — barra de categorías
+     (se rellena dinámicamente desde app.js)
 ═══════════════════════════════════ -->
 <nav class="catnav" aria-label="Navegación por categorías">
   <button id="catnav-left"  class="catnav-arrow catnav-arrow-left  hidden" aria-label="Ver categorías anteriores">&#8249;</button>
   <div id="catnav-scroll" role="list" aria-label="Categorías de cursos">
-    <span class="catnav-label" aria-hidden="true">Ir a:</span>
-    <a href="#indice">📋 Índice</a>
-    <a href="#cajas">🛒 Cajas</a>
-    <a href="#frescos1">🥩 Frescos 1</a>
-    <a href="#frescos2">🧀 Frescos 2</a>
-    <a href="#elaborados">🍞 Elaborados</a>
-    <a href="#seg-higiene">🦺 Seg. e Higiene</a>
-    <a href="#salon">🏪 Salón</a>
-    <a href="#mantenimiento">🔧 Mantenimiento</a>
-    <a href="#medico">🩺 Serv. Médico</a>
-    <a href="#calidad">✅ Calidad</a>
-    <a href="#coto-digital">💻 Coto Digital</a>
-    <a href="#seg-info">🔒 Seg. Info</a>
-    <a href="#flota">🚚 Flota Propia</a>
-    <a href="#no-alimentos">🛍️ No Alimentos</a>
-    <a href="#administracion">📋 Administración</a>
-    <a href="#rrhh">👥 RRHH</a>
-    <a href="#gestion">📈 Gest. Comercial</a>
-    <a href="#atencion">🤝 Atención</a>
-    <a href="#adm-finanzas">💳 Adm. y Finanzas</a>
-    <a href="#seguridad">🛡️ Seguridad</a>
-    <a href="#zonae">⭐ ZonaE!</a>
-    <span class="catnav-count">
-      <strong id="searchCountNum">84</strong> cursos
-    </span>
+    <!-- Render dinámico -->
   </div>
   <button id="catnav-right" class="catnav-arrow catnav-arrow-right" aria-label="Ver más categorías">&#8250;</button>
 </nav>
 
 
 <!-- ═══════════════════════════════════
-     ÍNDICE DE CURSOS
+     ÍNDICE DE CURSOS (render dinámico)
 ═══════════════════════════════════ -->
 <section class="index-section" id="indice" aria-labelledby="indice-title">
   <div class="page-wrap">
@@ -186,1388 +212,33 @@
       <h2 id="indice-title">Índice de cursos</h2>
       <div class="index-heading-line" aria-hidden="true"></div>
     </div>
-    <div class="index-grid">
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#F02850;"><h3>🛒 Cajas</h3><span>7 cursos</span></div>
-        <ul>
-          <li><a href="#cajas">Cadetes de Cajas</a></li>
-          <li><a href="#cajas">Cajas – Resolución de conflictos</a></li>
-          <li><a href="#cajas">Envíos – Conceptos básicos</a></li>
-          <li><a href="#cajas">Medios de pago</a></li>
-          <li><a href="#cajas">Reconocimiento de billetes – Dólares</a></li>
-          <li><a href="#cajas">Reconocimiento de billetes – Euros</a></li>
-          <li><a href="#cajas">Reconocimiento de billetes – Pesos</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#F0281E;"><h3>🥩 Frescos 1</h3><span>8 cursos</span></div>
-        <ul>
-          <li><a href="#frescos1">Armado de góndola de frutas y verduras</a></li>
-          <li><a href="#frescos1">Cortes de media res – Cuarto delantero</a></li>
-          <li><a href="#frescos1">Cortes de media res – Cuarto trasero</a></li>
-          <li><a href="#frescos1">Cortes de media res – Pecho</a></li>
-          <li><a href="#frescos1">Desposte de media res</a></li>
-          <li><a href="#frescos1">Frutas y verduras – Conceptos básicos</a></li>
-          <li><a href="#frescos1">Introducción al sector de Carnicería</a></li>
-          <li><a href="#frescos1">Uso de la máquina ULMA – Empaquetadora</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#FA463C;"><h3>🧀 Frescos 2</h3><span>3 cursos</span></div>
-        <ul>
-          <li><a href="#frescos2">Armado de picadas</a></li>
-          <li><a href="#frescos2">Corte de quesos</a></li>
-          <li><a href="#frescos2">Pescadería – Exhibición de productos</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#FF8200;"><h3>🍞 Elaborados</h3><span>1 curso</span></div>
-        <ul>
-          <li><a href="#elaborados">Elaboración de facturas</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#F0A032;"><h3>🦺 Seguridad e Higiene</h3><span>2 cursos</span></div>
-        <ul>
-          <li><a href="#seg-higiene">Inducción en Seguridad e Higiene</a></li>
-          <li><a href="#seg-higiene">Uso seguro del montacargas</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#F0BE00; color:#1f2d46;"><h3>🏪 Salón</h3><span>5 cursos</span></div>
-        <ul>
-          <li><a href="#salon">Salón – Flujo del hueco</a></li>
-          <li><a href="#salon">Surtido sin Venta</a></li>
-          <li><a href="#salon">Salón – Prioridad de reposición</a></li>
-          <li><a href="#salon">Salón – Relevamiento de clases</a></li>
-          <li><a href="#salon">Salón – Traspasos de sucursal a 126</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#00C88C;"><h3>🔧 Mantenimiento</h3><span>6 cursos</span></div>
-        <ul>
-          <li><a href="#mantenimiento">Circuito de Service</a></li>
-          <li><a href="#mantenimiento">Detección de incendios</a></li>
-          <li><a href="#mantenimiento">Electricidad – Conceptos básicos</a></li>
-          <li><a href="#mantenimiento">Puesta a punto de la máquina ULMA</a></li>
-          <li><a href="#mantenimiento">Seguridad Eléctrica</a></li>
-          <li><a href="#mantenimiento">Vehículos Industriales</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#1EB4BE;"><h3>🩺 Servicio Médico</h3><span>1 curso</span></div>
-        <ul>
-          <li><a href="#medico">Prevención cardiovascular</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#1EAADC;"><h3>✅ Control de calidad</h3><span>4 cursos</span></div>
-        <ul>
-          <li><a href="#calidad">Inspecciones – Conceptos básicos</a></li>
-          <li><a href="#calidad">Productos ECONOR</a></li>
-          <li><a href="#calidad">Productos VICTORY</a></li>
-          <li><a href="#calidad">Seguridad Alimentaria</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#2896E6;"><h3>💻 Coto Digital</h3><span>5 cursos</span></div>
-        <ul>
-          <li><a href="#coto-digital">Armadores de Coto Digital</a></li>
-          <li><a href="#coto-digital">Auxiliares administrativos – Parte 1</a></li>
-          <li><a href="#coto-digital">Auxiliares administrativos – Parte 2</a></li>
-          <li><a href="#coto-digital">Coto Digital – Conceptos básicos</a></li>
-          <li><a href="#coto-digital">Coto Digital – Picking</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#1E78DC;"><h3>🔒 Seg. de la Información</h3><span>1 curso</span></div>
-        <ul>
-          <li><a href="#seg-info">Seguridad de la Información – Conceptos básicos</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#1E5AD2;"><h3>🚚 Flota Propia</h3><span>1 curso</span></div>
-        <ul>
-          <li><a href="#flota">Choferes de Flota Propia</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#143CC8;"><h3>🛍️ No Alimentos</h3><span>7 cursos</span></div>
-        <ul>
-          <li><a href="#no-alimentos">Coto Hogar – Conceptos básicos</a></li>
-          <li><a href="#no-alimentos">NOA – Prioridad de reposición</a></li>
-          <li><a href="#no-alimentos">NOA – Relevamiento de clases</a></li>
-          <li><a href="#no-alimentos">Textil/Bazar – Archivos de auditoría</a></li>
-          <li><a href="#no-alimentos">Textil/Bazar – Carpeta compartida</a></li>
-          <li><a href="#no-alimentos">Textil/Bazar – Pedido de repuestos</a></li>
-          <li><a href="#no-alimentos">Ventas – Conceptos básicos</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#5A1ED2;"><h3>📋 Administración</h3><span>9 cursos</span></div>
-        <ul>
-          <li><a href="#administracion">Adm. de personal – Operatorias de cajas</a></li>
-          <li><a href="#administracion">Análisis de mermas</a></li>
-          <li><a href="#administracion">Cajas – Apertura del sector</a></li>
-          <li><a href="#administracion">Introductorio de toma de inventario</a></li>
-          <li><a href="#administracion">Qué es un inventario</a></li>
-          <li><a href="#administracion">Stock – Conceptos básicos</a></li>
-          <li><a href="#administracion">Tipos de inventario</a></li>
-          <li><a href="#administracion">Toma de inventario – Electro</a></li>
-          <li><a href="#administracion">Uso de balanzas</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#8228C8;"><h3>👥 Recursos Humanos</h3><span>8 cursos</span></div>
-        <ul>
-          <li><a href="#rrhh">Administración de RRHH – 1</a></li>
-          <li><a href="#rrhh">Administración de RRHH – 2</a></li>
-          <li><a href="#rrhh">Manual de RRHH – 3</a></li>
-          <li><a href="#rrhh">Manual de RRHH – 4</a></li>
-          <li><a href="#rrhh">Manual de RRHH – 5</a></li>
-          <li><a href="#rrhh">Manual de RRHH – 6</a></li>
-          <li><a href="#rrhh">Manual de RRHH – 7</a></li>
-          <li><a href="#rrhh">Manual de RRHH – 8</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#AA1E96;"><h3>📈 Gestión Comercial</h3><span>4 cursos</span></div>
-        <ul>
-          <li><a href="#gestion">Gestión Comercial – Conceptos básicos</a></li>
-          <li><a href="#gestion">Estudio de casos: Clavos</a></li>
-          <li><a href="#gestion">Panel de control</a></li>
-          <li><a href="#gestion">Uso de aplicativo – Sucursales 3</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#BE1478;"><h3>🤝 Atención al cliente</h3><span>1 curso</span></div>
-        <ul>
-          <li><a href="#atencion">Conociendo al cliente</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#D71E50;"><h3>💳 Adm. y Finanzas</h3><span>3 cursos</span></div>
-        <ul>
-          <li><a href="#adm-finanzas">Contrato de la tarjeta TCI</a></li>
-          <li><a href="#adm-finanzas">Uso del Aplicativo de tarjeta TCI</a></li>
-          <li><a href="#adm-finanzas">Prevención de LA/FT/FP</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#646464;"><h3>🛡️ Seguridad</h3><span>4 cursos</span></div>
-        <ul>
-          <li><a href="#seguridad">Controles para modalidades de hurto</a></li>
-          <li><a href="#seguridad">Recepciones del Centro de Distribución</a></li>
-          <li><a href="#seguridad">Recepción de proveedores</a></li>
-          <li><a href="#seguridad">Seguridad – Puestos en Sucursal</a></li>
-        </ul>
-      </div>
-
-      <div class="index-card">
-        <div class="index-card-header" style="background:#1D1D1B;"><h3>⭐ ZonaE!</h3><span>4 cursos</span></div>
-        <ul>
-          <li><a href="#zonae">Anfitriones de Zona E!</a></li>
-          <li><a href="#zonae">Camareros de Zona Gourmet</a></li>
-          <li><a href="#zonae">Cocineros de Zona Gourmet</a></li>
-          <li><a href="#zonae">Cumpleaños de Zona E!</a></li>
-        </ul>
-      </div>
-
+    <div class="index-grid" id="indexGrid">
+      <!-- Render dinámico -->
     </div>
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════
+     CURSOS POR CATEGORÍA (render dinámico)
+═══════════════════════════════════ -->
 <div class="courses-section">
   <div class="page-wrap">
+
+    <!-- Mensaje sin resultados -->
     <div class="no-results">
       <div class="no-results-icon">🔍</div>
-      <p class="no-results-text">No se encontraron cursos</p>
-      <p class="no-results-sub">Probá con otro término o navegá por categoría</p>
+      <div class="no-results-text"><strong>Sin resultados</strong></div>
+      <div class="no-results-sub">Probá con otra palabra clave o revisá el índice.</div>
     </div>
-  <div class="category-block anim-fadein" id="cajas" style="--cat-light:#FAAAAA;--cat-main:#F02850;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-cajas)">Cajas</span>
-      <span class="cat-header-count" style="background:var(--cat-cajas)">7 cursos</span>
+
+    <div id="coursesContainer">
+      <!-- Render dinámico de categorías y cards -->
     </div>
-    <div class="courses-grid">
 
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Cajas-Cadetes.jpg" alt="Cadetes de Cajas"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F02850"></span>Cajas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Cadetes de Cajas</div>
-          <div class="course-bajada">Guía práctica para acompañar el trabajo diario de los cadetes en la línea de cajas.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2017</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Cadetes de línea de cajas.</div>
-        <div class="course-desc">En este curso aprenderemos las tareas clave que realizan los cadetes durante la jornada laboral, desde la apertura y cierre de la sucursal hasta la gestión de envíos a domicilio. Abordaremos buenas prácticas de orden y limpieza, atención al cliente y uso correcto de los elementos de traslado.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Cajas-Resolución-Conflictos.jpg" alt="Cajas – Resolución de conflictos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F02850"></span>Cajas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Cajas – Resolución de conflictos</div>
-          <div class="course-bajada">Pautas para gestionar situaciones sensibles en la línea de cajas de manera respetuosa y profesional.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Cajeros, Auxiliares de Cajas y Jefes de Caja.</div>
-        <div class="course-desc">En este curso aprenderemos a gestionar situaciones sensibles en la línea de cajas, especialmente al solicitar al cliente que muestre su bolso o changuito. Abordaremos estrategias de comunicación basadas en el respeto y la empatía, y cómo aplicar la normativa vigente ante una negativa.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Cajas-Envios.jpg" alt="Envíos – Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F02850"></span>Cajas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Envíos – Conceptos básicos</div>
-          <div class="course-bajada">Todo lo que necesitás saber para la gestión del circuito de envíos.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2016</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes, postulantes y auxiliares de Cajas.</div>
-        <div class="course-desc">Este curso presenta el circuito completo de un pedido, desde la carga de clientes en Coto Servicios hasta el seguimiento y cierre de los envíos. Se abordan los controles diarios, la gestión de pedidos pendientes y el uso de los sistemas de envíos.</div>
-      </div>
-      </div>
-      </div>
-
-<div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Cajas-Medios-de-Pago.jpg" alt="Medios de pago"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F02850"></span>Cajas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Medios de pago</div>
-          <div class="course-bajada">Procedimientos y buenas prácticas para el cobro en línea de cajas.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2026</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes, auxiliares y cajeros de línea de Cajas.</div>
-        <div class="course-desc">En este curso se desarrollan los medios de pago habilitados en Coto y sus medidas de seguridad. Se repasan los procedimientos de cobro con efectivo, tarjetas, documentos y billeteras virtuales, incluyendo control de validez y acreditación de identidad.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Cajas-BDólares.jpg" alt="Reconocimiento de billetes – Dólares"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F02850"></span>Cajas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Reconocimiento de billetes – Dólares</div>
-          <div class="course-bajada">Criterios básicos para identificar billetes de dólar auténticos en la línea de cajas.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de línea de cajas y personas afectadas al sector o interesadas en la temática.</div>
-        <div class="course-desc">Este curso brinda nociones para reconocer los billetes de dólar en circulación, sus series y denominaciones. Se trabajan las principales medidas de seguridad, la identificación de la serie alfanumérica y los procedimientos ante la recepción de moneda extranjera.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Cajas-BEuros.jpg" alt="Reconocimiento de billetes – Euros"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F02850"></span>Cajas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Reconocimiento de billetes – Euros</div>
-          <div class="course-bajada">Herramientas para identificar los euros auténticos y operar con seguridad.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de línea de cajas y personas afectadas al sector o interesadas en la temática.</div>
-        <div class="course-desc">Este curso brinda nociones para reconocer los billetes de euro en circulación, sus series y principales diferencias. Se abordan las denominaciones aceptadas en sucursal, las medidas de seguridad vigentes e identificación de hologramas para una correcta validación durante la operatoria diaria.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Cajas-BPesos.jpg" alt="Reconocimiento de billetes – Pesos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F02850"></span>Cajas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Reconocimiento de billetes – Pesos</div>
-          <div class="course-bajada">Una mirada práctica para identificar billetes auténticos y garantizar operaciones seguras.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de línea de cajas y personas afectadas al sector o interesadas en la temática.</div>
-        <div class="course-desc">Este curso brinda nociones para reconocer los billetes de pesos en circulación, identificando sus distintas series y denominaciones. Se presentan las principales medidas de seguridad a observar al tacto, a simple vista y a trasluz, para facilitar una correcta identificación y prevenir errores durante la operatoria diaria.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
   </div>
+</div>
 
-  <!-- FRESCOS 1 -->
-  <div class="category-block anim-fadein" id="frescos1" style="--cat-light:#FFAAA0;--cat-main:#F0281E;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-frescos1)">Frescos 1</span>
-      <span class="cat-header-count" style="background:var(--cat-frescos1)">8 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos1-Armados-FyV.jpg" alt="Armado de góndola de frutas y verduras"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Armado de góndola de frutas y verduras</div>
-          <div class="course-bajada">Criterios esenciales para el cuidado, control de calidad y exhibición de frutas y verduras.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2017</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Verdulería.</div>
-        <div class="course-desc">Este curso aborda los conceptos fundamentales del sector de frutas y verduras, como la clasificación de productos, la estacionalidad y los controles de calidad. Se trabajan criterios de almacenamiento, control de temperaturas y buenas prácticas de exhibición e higiene para prevenir mermas.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos1-Cuarto-Delantero.jpg" alt="Cortes de media res - Cuarto delantero"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Cortes de media res - Cuarto delantero</div>
-          <div class="course-bajada">Técnicas de desposte y presentación de cortes del cuarto delantero.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Frescos.</div>
-        <div class="course-desc">Este curso aborda el desposte y corte del cuarto delantero de la media res, la obtención de los principales cortes y bifes y las distintas formas de armado del bife a 10 costillas. Además, se trabaja el uso correcto de cuchilla y sierra, y los criterios básicos de higiene y calidad.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos1-Cuarto-Trasero.jpg" alt="Cortes de media res - Cuarto trasero"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Cortes de media res - Cuarto trasero</div>
-          <div class="course-bajada">Cortes, técnicas y presentaciones del cuarto trasero de la media res.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Frescos.</div>
-        <div class="course-desc">Este curso desarrolla técnicas de corte, limpieza y presentación del cuarto trasero de la media res, trabajando piezas internas y externas. Se estudian cortes como cuadril, peceto, nalga, tortuguita, bola de lomo y osobuco, además de emprolijado, milanesas y uso correcto de cuchilla y sierra.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos1-Pecho.jpg" alt="Cortes de media res - Pecho"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Cortes de media res - Pecho</div>
-          <div class="course-bajada">Cortes, técnicas y presentaciones del pecho de la media res.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Colaboradores, postulantes a jefes / jefes de Carnicería y gerentes de sucursal.</div>
-        <div class="course-desc">En este curso aprenderán cómo se obtienen, limpian y presentan los cortes del pecho de la media res. Nos enfocaremos en las técnicas correctas de desposte y exhibición para garantizar el correcto aprovechamiento de la pieza, cumpliendo con los estándares de calidad y frescura.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos1-Deposte.jpg" alt="Desposte de media res"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Desposte de media res</div>
-          <div class="course-bajada">Fundamentos clave para el desposte seguro y correcto de la media res.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2016</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Frescos.</div>
-        <div class="course-desc">Este curso presenta los conceptos generales del desposte, abordando herramientas, elementos de seguridad, técnicas de corte y clasificación de piezas. Se aprende a distinguir cortes delanteros y pistola, junto con los cuidados necesarios para el correcto almacenamiento y conservación de la carne.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos1-Frutas-y-Verduras.jpg" alt="Frutas y verduras – Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Frutas y verduras – Conceptos básicos</div>
-          <div class="course-bajada">Criterios esenciales para el cuidado, control de calidad y exhibición de frutas y verduras.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2017</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Verdulería.</div>
-        <div class="course-desc">Este curso aborda los conceptos fundamentales del sector de frutas y verduras, como la clasificación de productos, la estacionalidad y los controles de calidad. Se trabajan criterios de almacenamiento, control de temperaturas y buenas prácticas de exhibición e higiene para prevenir mermas.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos-1-Intro.jpg" alt="Introducción al sector de Carnicería"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Introducción al sector de Carnicería</div>
-          <div class="course-bajada">Conceptos básicos de recepción, producción y exhibición en el sector Carnicería.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2016</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Carnicería.</div>
-        <div class="course-desc">Este curso presenta los conceptos fundamentales del sector Carnicería, incluyendo clasificación de la hacienda, recepción, almacenamiento, controles de calidad y seguridad. También aborda producción operativa, uso de maquinarias, limpieza y exhibición en mostrador y góndola.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos1-M-Ulma.jpg" alt="Uso de la máquina ULMA – Empaquetadora"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0281E"></span>Frescos 1</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Uso de la máquina ULMA – Empaquetadora</div>
-          <div class="course-bajada">Instrucciones clave para operar la empaquetadora ULMA de forma segura y eficiente.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2013</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Carnicería.</div>
-        <div class="course-desc">Este curso brinda instrucciones para el uso seguro y eficiente de la empaquetadora ULMA en el sector Frescos. Aborda qué productos pueden y no pueden empaquetarse, el manejo del panel de mando, el control del sellado, las malas prácticas a evitar y los procedimientos de limpieza y verificación básica por turno.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- FRESCOS 2 -->
-  <div class="category-block anim-fadein" id="frescos2" style="--cat-light:#FAB4AA;--cat-main:#FA463C;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-frescos2)">Frescos 2</span>
-      <span class="cat-header-count" style="background:var(--cat-frescos2)">3 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos2-Picadas.jpg" alt="Armado de picadas"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#FA463C"></span>Frescos 2</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Armado de picadas</div>
-          <div class="course-bajada">Claves para preparar picadas con buena presentación, peso y frescura.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Quesos y Fiambres.</div>
-        <div class="course-desc">Este curso enseña el armado de picadas de quesos y fiambres, considerando bandeja, cuchillo y orden de armado. Aborda peso estándar, variedades, durabilidad y criterios de higiene y presentación, para lograr una exhibición atractiva y asegurar la aptitud de consumo en góndola.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos2-Quesos.jpg" alt="Corte de quesos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#FA463C"></span>Frescos 2</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Corte de quesos</div>
-          <div class="course-bajada">Técnicas de corte, manipulación y exhibición para quesos y dulces, priorizando seguridad, calidad y presentación.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Quesos y Fiambres.</div>
-        <div class="course-desc">Este curso enseña técnicas correctas de corte y manipulación de quesos y dulces, diferenciando tipos, herramientas y formas de presentación. Aborda criterios de seguridad, exhibición con o sin bandeja y cuidados específicos de cada variedad, para garantizar productos frescos y bien presentados en góndola.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Frescos2-Exhibición-Pesca.jpg" alt="Pescadería – Exhibición de productos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#FA463C"></span>Frescos 2</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Pescadería – Exhibición de productos</div>
-          <div class="course-bajada">Todo lo que necesitás saber para conservar, exhibir y ordenar los productos de pescadería.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Pescadería.</div>
-        <div class="course-desc">Este curso enseña cómo conservar y presentar correctamente los productos del sector en mostrador, heladeras y pozos. Se abordan temperaturas de referencia, clasificación, almacenamiento seguro, uso del hielo, rotación y normas de higiene, junto con prácticas a evitar para preservar la calidad.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ELABORADOS -->
-  <div class="category-block anim-fadein" id="elaborados" style="--cat-light:#FFD28C;--cat-main:#FF8200;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-elaborados)">Elaborados</span>
-      <span class="cat-header-count" style="background:var(--cat-elaborados)">1 curso</span>
-    </div>
-    <div class="courses-grid">
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Elaborados-Facturas.jpg" alt="Elaboración de facturas"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#FF8200"></span>Elaborados</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Elaboración de facturas</div>
-          <div class="course-bajada">Lineamientos de elaboración y presentación de facturas en el sector Elaborados.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-        </div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Elaborados.</div>
-        <div class="course-desc">Este curso aborda los lineamientos para la elaboración y presentación de facturas en el sector Elaborados, cubriendo los requisitos legales, el proceso de emisión y los criterios de control de calidad del documento.</div>
-      </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- SEGURIDAD E HIGIENE -->
-  <div class="category-block anim-fadein" id="seg-higiene" style="--cat-light:#FADC8C;--cat-main:#F0A032;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-seg-higiene)">Seguridad e Higiene</span>
-      <span class="cat-header-count" style="background:var(--cat-seg-higiene)">2 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/SegeHig-Inducción.jpg" alt="Inducción en Seguridad e Higiene"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0A032"></span>Seg. e Higiene</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Inducción en Seguridad e Higiene - Conceptos básicos</div>
-          <div class="course-bajada">Una introducción fundamental para cuidar lo más importante: las personas.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Elaborados.</div>
-        <div class="course-desc">Este curso enseña a elaborar las principales variedades de facturas: medialunas, vigilantes, tortitas negras, cañoncitos, lengüitas rellenas y surtidas. Se trabajan reposo de masas, armado, pintado, horneado, relleno y decoración, respetando recetas, tiempos y presentación.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/SegeHig-Montacargas.jpg" alt="Uso seguro del montacargas"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0A032"></span>Seg. e Higiene</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Uso seguro del montacargas</div>
-          <div class="course-bajada">Las 5 normas básicas para operar montacargas sin riesgos.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Todo el personal de la compañía.</div>
-        <div class="course-desc">Este curso presenta las cinco normas básicas para el uso seguro del montacargas. Aborda la verificación previa del equipo, las condiciones de operación, las medidas de seguridad durante su uso y cómo actuar ante fallas o situaciones de riesgo, con el objetivo de prevenir accidentes.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SALÓN -->
-  <div class="category-block anim-fadein" id="salon" style="--cat-light:#F0E18C;--cat-main:#F0BE00;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-salon)">Salón</span>
-      <span class="cat-header-count" style="background:var(--cat-salon)">5 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Salón-Flujo-del-Hueco.jpg" alt="Salón - Flujo del hueco"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0BE00"></span>Salón</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Salón - Flujo del hueco</div>
-          <div class="course-bajada">Gestión diaria de faltantes en góndola para asegurar stock, orden y correcta exhibición.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2022</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes y colaboradores del Salón de Ventas.</div>
-        <div class="course-desc">Este curso desarrolla el proceso diario de relevamiento y gestión de faltantes en góndola mediante PDA y reportes de GESCOM. Explica la identificación de huecos del jefe, del sistema y coincidentes, el uso de obleas, la detección de falsos stocks y los ajustes correspondientes.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Salón-Ndias.jpg" alt="Salón - N días"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0BE00"></span>Salón</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Salón - N días</div>
-          <div class="course-bajada">Control y gestión de productos sin rotación para mejorar ventas y exhibición.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2022</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes y colaboradores del Salón de Ventas.</div>
-        <div class="course-desc">Este curso explica el concepto de N días y el uso del reporte para detectar productos que no registran ventas en un período determinado. Aborda la identificación de falsos stocks y problemas de exhibición, y el análisis de acciones comerciales y correctivas necesarias para asegurar la rotación.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Salón-Prioridad-Reposición.jpg" alt="Salón - Prioridad de reposición"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0BE00"></span>Salón</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Salón - Prioridad de reposición</div>
-          <div class="course-bajada">Gestión de reposición en góndola según stock y mínimos de exhibición.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2022</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes y colaboradores del Salón de Ventas.</div>
-        <div class="course-desc">Este curso explica el uso del reporte de Prioridad de Reposición para identificar productos ingresados con quiebre de stock o por debajo del MEG. Aborda la reposición inmediata según prioridades, el control permanente tras la recepción de mercadería y la impresión de obleas de precio en GESCOM.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Salón-Relevamiento-Clases.jpg" alt="Salón - Relevamiento de clases"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0BE00"></span>Salón</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Salón - Relevamiento de clases</div>
-          <div class="course-bajada">Control semanal de surtido y correcta exhibición en góndola.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2022</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes y colaboradores del Salón de Ventas.</div>
-        <div class="course-desc">Este curso explica el relevamiento semanal de clases para verificar que los productos definidos por el sistema estén correctamente exhibidos en góndola. Aborda el uso de PDA y GESCOM, el escaneo de obleas y huecos, la corrección de diferencias y el análisis del cumplimiento por departamento.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Salón-Traspasos.jpg" alt="Salón - Traspasos de sucursal a 126"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#F0BE00"></span>Salón</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Salón - Traspasos de sucursal a 126</div>
-          <div class="course-bajada">Gestión de traspasos de mercadería al Centro de Devoluciones.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2022</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Colaboradores de Salón y personal de Operaciones.</div>
-        <div class="course-desc">Este curso explica el procedimiento para realizar traspasos de mercadería desde la sucursal al Centro de Devoluciones 126. Aborda la identificación de productos con convenio, la preparación y carga del traspaso en el sistema, el uso de obleas, el armado correcto de pallets y los requisitos de envío.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- MANTENIMIENTO -->
-  <div class="category-block anim-fadein" id="mantenimiento" style="--cat-light:#AFE6BE;--cat-main:#00C88C;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-mant)">Mantenimiento</span>
-      <span class="cat-header-count" style="background:var(--cat-mant)">6 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Mantenimiento-Circuito-Service.jpg" alt="Circuito de Service"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#00C88C"></span>Mantenimiento</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Circuito de Service</div>
-          <div class="course-bajada">Cómo gestionar correctamente los pedidos de mantenimiento en la sucursal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes, postulantes y empleados de línea de los sectores Mantenimiento, Administración y Operaciones.</div>
-        <div class="course-desc">Este curso enseña a gestionar los pedidos de mantenimiento en sucursal, diferenciando Service automáticos y no automáticos. Se abordan todas las etapas del proceso: generación, seguimiento, carga y control de presupuestos, supervisión, valorización y cierre.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Mantenimiento-Detección-Incendios.jpg" alt="Detección de incendios"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#00C88C"></span>Mantenimiento</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Detección de incendios</div>
-          <div class="course-bajada">Conocé los sistemas, dispositivos y procedimientos para detectar y actuar ante incendios.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2013</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Gerentes y jefes de sectores.</div>
-        <div class="course-desc">Este curso brinda conocimientos sobre los sistemas de detección de incendios en sucursales, abordando normativa, tipos de detectores térmicos, de humo, gas y manuales, funcionamiento de la central de alarma, señalización acústica y visual y sistemas convencionales y analógicos.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Mantenimiento-Básico-Electricidad.jpg" alt="Electricidad – Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#00C88C"></span>Mantenimiento</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Electricidad – Conceptos básicos</div>
-          <div class="course-bajada">Fundamentos esenciales para comprender instalaciones eléctricas y trabajar con seguridad.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2014</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Mantenimiento y colaboradores que realicen tareas relacionadas con instalaciones eléctricas.</div>
-        <div class="course-desc">Este curso introduce los conceptos básicos de electricidad, abordando magnitudes eléctricas, tipos de corriente monofásica y trifásica, elementos de maniobra y protección, uso de instrumentos de medición y representación de circuitos para trabajar con criterio técnico y seguridad operativa.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Mantenimiento-Puesta-Punto-ULMA.jpg" alt="Puesta a punto de la máquina ULMA"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#00C88C"></span>Mantenimiento</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Puesta a punto de la máquina ULMA</div>
-          <div class="course-bajada">Ajustes clave para garantizar el funcionamiento seguro y eficiente de la empaquetadora.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Técnicos de mantenimiento de sucursales.</div>
-        <div class="course-desc">Este curso enseña a realizar la puesta a punto de los principales componentes de la máquina ULMA, como el empujador, las plegadoras y el carro de alimentación. Se abordan los ajustes necesarios para asegurar un funcionamiento seguro, preciso y continuo del equipo.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Mantenimiento-Seguridad-Eléctrica.jpg" alt="Seguridad Eléctrica"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#00C88C"></span>Mantenimiento</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Seguridad Eléctrica</div>
-          <div class="course-bajada">Fundamentos y prácticas para prevenir riesgos y trabajar con electricidad de forma segura.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2015</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de mantenimiento y colaboradores que realizan tareas con riesgo eléctrico.</div>
-        <div class="course-desc">Este curso aborda los riesgos asociados al trabajo con instalaciones eléctricas, como descargas, incendios y explosiones. Enseña el uso correcto de EPP, elementos de maniobra y salvataje, y repasa las 5 reglas de oro de la seguridad eléctrica.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Mantenimiento-Vehículos-Industriales.jpg" alt="Vehículos Industriales"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#00C88C"></span>Mantenimiento</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Vehículos Industriales</div>
-          <div class="course-bajada">Checklist y procedimientos para operar de forma segura los principales vehículos del depósito.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Mantenimiento y todos quienes utilizan vehículos industriales.</div>
-        <div class="course-desc">Este curso enseña a realizar los checklists diarios de los tres vehículos industriales principales: autoelevador, apilador y zorra eléctrica. Se aprende a detectar fallas a tiempo, garantizar un uso seguro, prevenir accidentes y prolongar la vida útil de los equipos.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SERVICIO MÉDICO -->
-  <div class="category-block anim-fadein" id="medico" style="--cat-light:#AADCDC;--cat-main:#1EB4BE;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-medico)">Servicio Médico</span>
-      <span class="cat-header-count" style="background:var(--cat-medico)">1 curso</span>
-    </div>
-    <div class="courses-grid">
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/ServicioMédico-Prevención-Cardio.jpg" alt="Prevención cardiovascular"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1EB4BE"></span>Serv. Médico</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Prevención cardiovascular</div>
-          <div class="course-bajada">Cómo reducir los riesgos de enfermedades cardiovasculares desde el cuidado diario.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2023</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-
-                </div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Todo el personal de COTO CICSA.</div>
-        <div class="course-desc">Este curso brinda herramientas prácticas para reducir el riesgo cardiovascular en la vida cotidiana. Aborda factores de riesgo como el sedentarismo, la alimentación y el estrés, y promueve hábitos saludables en el entorno laboral.</div>
-      </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- CONTROL DE CALIDAD -->
-  <div class="category-block anim-fadein" id="calidad" style="--cat-light:#A0DCE6;--cat-main:#1EAADC;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-calidad)">Control de calidad</span>
-      <span class="cat-header-count" style="background:var(--cat-calidad)">4 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Calidad-Inspecciones.jpg" alt="Inspecciones – Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1EAADC"></span>Calidad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Inspecciones – Conceptos básicos</div>
-          <div class="course-bajada">Qué hacer cuando llega una inspección: procedimientos y responsabilidades.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2012</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Todo el personal.</div>
-        <div class="course-desc">Este curso introduce a las enfermedades cardiovasculares como parte de las enfermedades no transmisibles (ENT) y explica cómo prevenirlas. Aborda los principales factores de riesgo, diferenciando entre modificables y no modificables, y promueve hábitos saludables para reducir el impacto de la hipertensión, el colesterol, la diabetes, el sedentarismo y el tabaquismo.</div>
-      </div>
-      </div>
-      </div>
-
-<div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Calidad-ECONOR.jpg" alt="Productos ECONOR"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1EAADC"></span>Calidad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Productos ECONOR</div>
-          <div class="course-bajada">Uso de equipamientos y productos ECONOR para los procesos de higiene en la sucursal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2023</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal operativo de carnicería, pescadería, verdulería, panadería, cocina, rotisería, fiambrería y salón.</div>
-        <div class="course-desc">Este curso brinda los conocimientos necesarios para utilizar correctamente los equipamientos y productos del sistema ECONOR en los procesos de higiene de la sucursal. Se abordan los distintos productos de limpieza, su aplicación específica y el funcionamiento de los dosificadores.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Calidad-VICTORY.jpg" alt="Productos VICTORY"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1EAADC"></span>Calidad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Productos VICTORY</div>
-          <div class="course-bajada">Uso correcto de productos y equipamiento para los procesos de limpieza y desinfección.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal operativo de carnicería, pescadería, verdulería, panadería, cocina, rotisería, fiambrería y salón.</div>
-        <div class="course-desc">Este curso aborda el uso adecuado de los productos del sistema VICTORY según sector, superficie y tipo de suciedad, junto con el funcionamiento de los dosificadores. Además, se trabajan los pasos correctos de limpieza y desinfección y el uso responsable de los EPP.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Calidad-Seguridad-Alimentaria.jpg" alt="Seguridad Alimentaria"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1EAADC"></span>Calidad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Seguridad Alimentaria</div>
-          <div class="course-bajada">Buenas prácticas para cuidar la salud de los consumidores.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2015</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Todo el personal de la compañía (colaboradores, jefes y gerentes).</div>
-        <div class="course-desc">Este curso aborda los conceptos básicos de seguridad alimentaria, diferenciando alimentos inocuos, alterados y contaminados. Se trabajan las buenas prácticas de higiene personal y de los ambientes, la prevención de ETAs, el control de temperaturas y la correcta manipulación de los alimentos para evitar la contaminación cruzada.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- COTO DIGITAL -->
-  <div class="category-block anim-fadein" id="coto-digital" style="--cat-light:#96DCF0;--cat-main:#2896E6;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-coto-digital)">Coto Digital</span>
-      <span class="cat-header-count" style="background:var(--cat-coto-digital)">5 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/CotoDigital-Armadores.jpg" alt="Armadores de Coto Digital"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#2896E6"></span>Coto Digital</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Armadores de Coto Digital</div>
-          <div class="course-bajada">Todo lo que necesitás saber para preparar pedidos de Coto Digital.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2023</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Coto Digital.</div>
-        <div class="course-desc">Este curso aborda el proceso completo de armado de pedidos de Coto Digital, desde la preparación inicial del armador y el uso de la PDA, hasta el picking, el manejo de faltantes y la organización por sectores. También se trabajan el pesaje, los controles finales y el cierre del pedido.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/CotoDigital-Aux1.jpg" alt="Auxiliares administrativos de Coto Digital - Parte 1"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#2896E6"></span>Coto Digital</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Auxiliares administrativos de Coto Digital - Parte 1</div>
-          <div class="course-bajada">Control de activos, reservas y gestión administrativa inicial.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares, postulantes a jefes y jefes de Coto Digital.</div>
-        <div class="course-desc">En este curso vas a aprender a controlar los activos del sector, gestionar las reservas y realizar los controles administrativos esenciales del área. Abordaremos la planilla de control diario, los procedimientos de facturación y resguardo de mercadería, y la solicitud de cupones.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/CotoDigital-Aux2.jpg" alt="Auxiliares administrativos de Coto Digital - Parte 2"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#2896E6"></span>Coto Digital</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Auxiliares administrativos de Coto Digital - Parte 2</div>
-          <div class="course-bajada">Procesos avanzados, devoluciones y resolución de reclamos.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares, postulantes a jefes y jefes de Coto Digital.</div>
-        <div class="course-desc">En este curso vamos a profundizar en los procesos administrativos del sector y el uso correcto de las herramientas de gestión. Te capacitarás en el control de órdenes de compra, diferencias de precio y manejo de la caja de devoluciones. También veremos la mesa de rendiciones y la gestión de reclamos CRM.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/CotoDigital-Básico.jpg" alt="Coto Digital - Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#2896E6"></span>Coto Digital</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Coto Digital - Conceptos básicos</div>
-          <div class="course-bajada">Cómo funciona el circuito completo de compra y entrega en Coto Digital.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Gerentes y personal del sector Coto Digital.</div>
-        <div class="course-desc">Este curso presenta el circuito completo de un pedido en Coto Digital, desde la compra realizada por el cliente en la web o la app hasta la entrega final y la rendición. Se repasan los roles involucrados y los pasos clave del proceso, como el armado, el cobro, la logística de distribución y la entrega del pedido.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/CotoDigital-Picking.jpg" alt="Coto Digital – Picking"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#2896E6"></span>Coto Digital</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Coto Digital – Picking</div>
-          <div class="course-bajada">Los primeros pasos para comenzar el armado de pedidos en Coto Digital.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Gerentes y personal de Coto Digital.</div>
-        <div class="course-desc">Este curso introduce el concepto de picking y los elementos necesarios para el armado de pedidos en Coto Digital. Se aborda el uso de la PDA, la carga y seguimiento de la orden, la preparación del carrito y la lógica de armado según el layout del salón.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SEGURIDAD DE LA INFORMACIÓN -->
-  <div class="category-block anim-fadein" id="seg-info" style="--cat-light:#96C8F0;--cat-main:#1E78DC;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-seg-info)">Seguridad de la información</span>
-      <span class="cat-header-count" style="background:var(--cat-seg-info)">1 curso</span>
-    </div>
-    <div class="courses-grid">
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Seg-Info.jpg" alt="Seguridad de la Información"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1E78DC"></span>Seg. Info</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Seguridad de la Información</div>
-          <div class="course-bajada">Lineamientos esenciales para proteger la información y los sistemas de la compañía.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-
-                </div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Todo el personal de COTO CICSA.</div>
-        <div class="course-desc">Este curso presenta los lineamientos esenciales para proteger la información y los sistemas de la compañía. Se abordan conceptos de ciberseguridad, buenas prácticas en el uso de contraseñas, manejo seguro de datos y responsabilidades del personal.</div>
-      </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- FLOTA PROPIA -->
-  <div class="category-block anim-fadein" id="flota" style="--cat-light:#96C8F0;--cat-main:#1E5AD2;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-flota)">Flota Propia</span>
-      <span class="cat-header-count" style="background:var(--cat-flota)">1 curso</span>
-    </div>
-    <div class="courses-grid">
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/FlotaPropia-Choferes.jpg" alt="Choferes de Flota Propia"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1E5AD2"></span>Flota</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Choferes de Flota Propia</div>
-          <div class="course-bajada">Todo lo que necesitás saber para desempeñarte como chofer de la Flota Propia de Coto Digital.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-          
-          <div class="course-desc">Este curso recorre la jornada del chofer de Flota Propia, desde la asignación del móvil y los controles previos hasta la entrega de pedidos y el cierre del día. Se abordan las responsabilidades del rol, la documentación requerida, el checklist del vehículo y los procedimientos ante imprevistos.
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Choferes de Flota Propia de Coto Digital.</div>
-      </div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- NO ALIMENTOS -->
-  <div class="category-block anim-fadein" id="no-alimentos" style="--cat-light:#96A0F0;--cat-main:#143CC8;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-no-alim)">No Alimentos</span>
-      <span class="cat-header-count" style="background:var(--cat-no-alim)">7 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/NOA-CotoHogar.jpg" alt="Coto Hogar – Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#143CC8"></span>No Alimentos</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Coto Hogar – Conceptos básicos</div>
-          <div class="course-bajada">Funcionamiento del sector, surtido y criterios para una correcta exhibición.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2013</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Todo el personal de la compañía.</div>
-        <div class="course-desc">Este curso presenta los fundamentos de la Seguridad de la Información en COTO y el uso responsable de la información como activo estratégico. Aborda el Convenio de Confidencialidad, la clasificación de la información, la gestión de accesos y las responsabilidades de Sistemas y de los empleados para prevenir usos indebidos.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/NOA-Prioridad-Reposición.jpg" alt="NOA - Prioridad de reposición"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#143CC8"></span>No Alimentos</div></div></div>
-        <div class="course-body">
-          <div class="course-title">NOA - Prioridad de reposición</div>
-          <div class="course-bajada">Herramientas y criterios para asegurar stock y góndolas completas en No Alimentos.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Colaboradores del sector NOA, Electro y responsables de Salón.</div>
-        <div class="course-desc">Este curso explica cómo utilizar el Reporte de Prioridad de Reposición para identificar productos agotados o con bajo stock y definir qué reponer primero en góndola. Introduce el concepto de MEG (Mínimo de Exhibición en Góndola) y los modos de consulta del reporte.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/NOA-RelevamientoClases.jpg" alt="NOA - Relevamiento de clases"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#143CC8"></span>No Alimentos</div></div></div>
-        <div class="course-body">
-          <div class="course-title">NOA - Relevamiento de clases</div>
-          <div class="course-bajada">Control de exhibición y disponibilidad en No Alimentos.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2025</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Colaboradores, postulantes a jefes y jefes de NOA (Electro, Hogar y Textil).</div>
-        <div class="course-desc">En este curso aprenderás a verificar que los productos de Electro, Hogar y Textil estén correctamente exhibidos y disponibles para la venta. Te capacitaremos en el uso de GESCOM, Sucursales 3 y la PDA para realizar el relevamiento semanal de clases.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/NOA-Auditoría-TextilBazar.jpg" alt="Textil/Bazar – Archivos de auditoría"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#143CC8"></span>No Alimentos</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Textil/Bazar – Archivos de auditoría</div>
-          <div class="course-bajada">Análisis de información clave para el control y la toma de decisiones del sector.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Textil y Bazar.</div>
-        <div class="course-desc">Este curso enseña a utilizar los archivos disponibles en la carpeta compartida del sector y a analizar los reportes enviados por auditoría. A partir de esta información, se aprende a evaluar el estado de los productos y a definir acciones como liquidaciones o ajustes por faltantes de stock.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/NOA-CarpCompartida.jpg" alt="Textil/Bazar – Carpeta compartida"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#143CC8"></span>No Alimentos</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Textil/Bazar – Carpeta compartida</div>
-          <div class="course-bajada">Gestión centralizada de la información del sector.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Textil y Bazar.</div>
-        <div class="course-desc">Este curso explica cómo crear, acceder y utilizar correctamente la Carpeta Compartida del sector Textil/Bazar. Se aborda su rol como herramienta central de gestión, donde se organiza información clave sobre ofertas, stock, precios y decomisos.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/NOA-GDM-Repuestos.jpg" alt="Textil/Bazar – Pedido de repuestos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#143CC8"></span>No Alimentos</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Textil/Bazar – Pedido de repuestos</div>
-          <div class="course-bajada">Cómo solicitar repuestos utilizando el sistema GDM.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2020</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del sector Textil/Bazar.</div>
-        <div class="course-desc">Este curso enseña cómo realizar pedidos de repuestos del sector Textil/Bazar a través del módulo Gestión de Pedidos del sistema GDM Sucursales. Se aborda el uso correcto de la herramienta, el seguimiento de pedidos y su importancia para asegurar una gestión comercial eficiente.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/NOA-BásicoVentas.jpg" alt="Ventas – Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#143CC8"></span>No Alimentos</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Ventas – Conceptos básicos</div>
-          <div class="course-bajada">Herramientas y técnicas para una atención efectiva y orientada al cierre.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2015</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Colaboradores y jefes de bazar, electrodomésticos y atención al cliente.</div>
-        <div class="course-desc">Este curso presenta las etapas del proceso de venta, desde la bienvenida hasta la despedida, incluyendo indagación, asesoramiento, manejo de objeciones, cierre y venta adicional. Brinda técnicas de comunicación para adaptarse a distintos perfiles de clientes.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ADMINISTRACIÓN -->
-  <div class="category-block anim-fadein" id="administracion" style="--cat-light:#AA96FA;--cat-main:#5A1ED2;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-admin)">Administración</span>
-      <span class="cat-header-count" style="background:var(--cat-admin)">9 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap1.jpg" alt="Administración de Recursos Humanos - 1"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Administración de Recursos Humanos - 1</div>
-          <div class="course-bajada">Procedimientos y criterios para gestionar ingresos de personal en sucursal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2023</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos en sucursales.</div>
-        <div class="course-desc">Este curso aborda el proceso de ingreso de personal en la sucursal, desde la gestión del requerimiento hasta el seguimiento del período de prueba. Incluye recepción del nuevo empleado, verificación de documentación, inducción, entrega de uniformes y EPP, y cierre administrativo.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap2.jpg" alt="Administración de Recursos Humanos – 2"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Administración de Recursos Humanos – 2</div>
-          <div class="course-bajada">Planificación horaria, vacaciones y gestión operativa en SAP.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos en sucursales.</div>
-        <div class="course-desc">Este curso aborda la planificación horaria y de vacaciones del personal, desde la carga web y sus etapas de aprobación hasta su imputación en SAP. Incluye modalidades de contrato, control de francos, cambios de horario, notificación al personal y liquidación de vacaciones.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap3.jpg" alt="Manual de Recursos Humanos – 3"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Manual de Recursos Humanos – 3</div>
-          <div class="course-bajada">Control de fichadas, ausencias y seguimiento operativo del personal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos en sucursales.</div>
-        <div class="course-desc">Este curso aborda la gestión integral del control de personal en sucursal. Incluye el tratamiento de errores de fichadas, control de jornada y horas extras, emisión y uso de ficha rosa, carga y seguimiento de ausencias en SAP, control de libretas sanitarias y elaboración de informes periódicos de RRHH.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap4.jpg" alt="Manual de Recursos Humanos – 4"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Manual de Recursos Humanos – 4</div>
-          <div class="course-bajada">Criterios y procedimientos para el régimen disciplinario en sucursal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos en las sucursales.</div>
-        <div class="course-desc">Este curso describe los principios del régimen disciplinario, los distintos tipos de faltas y sanciones, y cómo deben redactarse, cargarse y archivar. También se abordan los criterios de aplicación y las instancias de reunión vinculadas a la gestión de sanciones.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap5.jpg" alt="Manual de Recursos Humanos – 5"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Manual de Recursos Humanos – 5</div>
-          <div class="course-bajada">Procedimientos ante accidentes laborales y uso adecuado del botiquín.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos y responsables de área en las sucursales.</div>
-        <div class="course-desc">Este curso presenta los pasos a seguir ante un accidente de trabajo, incluyendo la clasificación de incidentes, qué se considera una enfermedad profesional y el rol del botiquín en la atención inicial. Una guía fundamental para actuar con rapidez y criterio ante situaciones imprevistas.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap6.jpg" alt="Manual de Recursos Humanos – 6"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Manual de Recursos Humanos – 6</div>
-          <div class="course-bajada">Cómo actuar correctamente frente a una inspección.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos y responsables operativos.</div>
-        <div class="course-desc">Este curso detalla qué organismos pueden presentarse en la sucursal y cuál es el procedimiento adecuado a seguir durante una inspección. Brinda herramientas para garantizar una respuesta clara, ordenada y alineada con la normativa vigente.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap7.jpg" alt="Manual de Recursos Humanos – 7"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Manual de Recursos Humanos – 7</div>
-          <div class="course-bajada">Control de pre-liquidación y entrega de recibos.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos en las sucursales.</div>
-        <div class="course-desc">Este curso detalla los aspectos fundamentales del proceso de pre-liquidación: desde la pérdida de premio y el control de frío, hasta la apertura y cierre de jornada, el control de preliquidación y la entrega de recibos al personal.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/RRHH-Cap8.jpg" alt="Manual de Recursos Humanos – 8"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#8228C8"></span>RRHH</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Manual de Recursos Humanos – 8</div>
-          <div class="course-bajada">Procedimientos para gestionar correctamente el egreso del personal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Auxiliares de Administración de Recursos Humanos y responsables de área en las sucursales.</div>
-        <div class="course-desc">Este curso aborda las tareas relacionadas con la baja de un colaborador: tipos de egreso, carga en sistema, devolución de indumentaria y generación del listado de bajas. Una guía práctica para asegurar que el cierre del vínculo laboral se realice de forma ordenada y conforme a los procedimientos establecidos.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- GESTIÓN COMERCIAL -->
-  <div class="category-block anim-fadein" id="gestion" style="--cat-light:#F096E6;--cat-main:#AA1E96;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-gestion)">Gestión comercial</span>
-      <span class="cat-header-count" style="background:var(--cat-gestion)">4 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/GestComercial-Clavos.jpg" alt="Estudio de casos: Clavos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#AA1E96"></span>Gest. Comercial</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Estudio de casos: Clavos</div>
-          <div class="course-bajada">Aprendé a identificar y gestionar productos que no rotan para optimizar la venta en sucursales.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2016</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del área Comercial.</div>
-        <div class="course-desc">Este curso enseña a identificar "clavos" o productos sin rotación mediante el uso de iPad y sistema VACA. Se analiza rotación, stock, kardex, precios y relevamientos, y se aplican soluciones específicas según cada caso, con ejemplos prácticos basados en situaciones reales de sucursales.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/GestComercial-Básico.jpg" alt="Gestión Comercial – Conceptos básicos"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#AA1E96"></span>Gest. Comercial</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Gestión Comercial – Conceptos básicos</div>
-          <div class="course-bajada">Conocé los procesos, herramientas y estrategias que permiten organizar y optimizar la gestión comercial en Coto.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2014</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de los sectores comerciales y de Administración.</div>
-        <div class="course-desc">Este curso introduce los fundamentos de la gestión comercial, abordando mantenimiento de artículos, uso de PLU, definición de surtido y reposición, manejo y control de stock, valorización y análisis de precios y competencia, utilizando herramientas internas y sistemas de la compañía.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/GestComercial-Panel-Control.jpg" alt="Panel de control"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#AA1E96"></span>Gest. Comercial</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Panel de control</div>
-          <div class="course-bajada">Conocé cómo usar Panel de Control para visualizar y tomar decisiones basadas en las ventas.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2018</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal del área Comercial.</div>
-        <div class="course-desc">Este curso introduce la aplicación Panel de Control en iPad, enseñando a visualizar y comparar ventas a distintos niveles: cadena, sucursal, grupo comercial, departamento, clase, proveedor y PLU. Se aprende a navegar la información e interpretar indicadores para optimizar la toma de decisiones comerciales.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/GestComercial-Suc3.jpg" alt="Uso de aplicativo – Sucursales 3"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#AA1E96"></span>Gest. Comercial</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Uso de aplicativo – Sucursales 3</div>
-          <div class="course-bajada">Herramienta clave para controlar mercadería, rotación y surtido de tu sucursal desde el iPad.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2019</span><span class="meta-tag duracion dur-corto">Curso corto</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Gerentes de Sucursal.</div>
-        <div class="course-desc">Este curso muestra cómo utilizar el módulo Surtido de Sucursales3 en iPad para consultar y analizar datos de stock, frecuencia de venta y disponibilidad de productos. Se trabaja la interpretación de la información para tomar decisiones estratégicas sobre surtido, rotación y reposición.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ATENCIÓN AL CLIENTE -->
-  <div class="category-block anim-fadein" id="atencion" style="--cat-light:#FF96D2;--cat-main:#BE1478;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-atencion)">Atención al cliente</span>
-      <span class="cat-header-count" style="background:var(--cat-atencion)">1 curso</span>
-    </div>
-    <div class="courses-grid">
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/TCI-Contrato.jpg" alt="Contrato de la tarjeta TCI"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#D71E50"></span>Adm. y Finanzas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Contrato de la tarjeta TCI</div>
-          <div class="course-bajada">Guía práctica para asistir al cliente en la correcta confección del contrato de la Tarjeta TCI.</div>
-          <div class="course-meta">
-            <span class="meta-tag anio">📅 2025</span>
-            <span class="meta-tag duracion dur-medio">Curso medio</span>
-          </div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes de sectores, Postulantes, Personal de línea y Personal de atención al cliente.</div>
-        <div class="course-desc">En este curso trabajaremos las habilidades blandas necesarias para brindar una atención de calidad, poniendo el foco en la escucha activa, la empatía y la comunicación clara. Analizaremos distintos perfiles de clientes y cómo responder de forma adecuada ante consultas, reclamos y situaciones de conflicto.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/TCI-Aplicativo.jpg" alt="Uso del aplicativo – Tarjeta TCI"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#D71E50"></span>Adm. y Finanzas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Uso del aplicativo – Tarjeta TCI</div>
-          <div class="course-bajada">Gestión integral de solicitudes y consultas de Tarjeta TCI desde el aplicativo.</div>
-          <div class="course-meta">
-            <span class="meta-tag anio">📅 2025</span>
-            <span class="meta-tag duracion dur-medio">Curso medio</span>
-          </div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Jefes y Auxiliares de Cajas.</div>
-        <div class="course-desc">En este curso aprenderemos a utilizar el aplicativo TCI para gestionar solicitudes de Tarjeta TCI, desde la carga de clientes hasta el seguimiento de estados y la atención de consultas frecuentes. Abordaremos cómo actuar ante los distintos resultados de una solicitud para acompañar correctamente cada trámite.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/TCI-Prevencion.jpg" alt="Prevención de LA/FT/FP"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#D71E50"></span>Adm. y Finanzas</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Prevención de LA/FT/FP</div>
-          <div class="course-bajada">Gestión de riesgos y cumplimiento normativo para Tarjeta Coto Inteligente.</div>
-          <div class="course-meta">
-            <span class="meta-tag anio">📅 2025</span>
-            <span class="meta-tag duracion dur-corto">Curso corto</span>
-          </div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Directores, gerentes, jefaturas y colaboradores cuyas funciones impacten en la TCI.</div>
-        <div class="course-desc">En este curso conocerás las obligaciones, responsabilidades y procedimientos vinculados a la prevención del Lavado de Activos (LA), Financiación del Terrorismo (FT) y de la Proliferación (FP). Su objetivo es asegurar el cumplimiento del marco legal y regulatorio vigente en la operatoria de la Tarjeta Coto Inteligente.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SEGURIDAD -->
-  <div class="category-block anim-fadein" id="seguridad" style="--cat-light:#B4B4B4;--cat-main:#646464;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-seguridad)">Seguridad</span>
-      <span class="cat-header-count" style="background:var(--cat-seguridad)">4 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Seguridad-Modalidades-Hurto.jpg" alt="Controles para modalidades de hurto"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#646464"></span>Seguridad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Controles para modalidades de hurto</div>
-          <div class="course-bajada">Prevención, detección y control de hurtos en sucursal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Seguridad en sucursales.</div>
-        <div class="course-desc">Este curso desarrolla las principales modalidades de hurto detectadas en cajas, salón y otras cadenas, como changos con doble fondo, bolsas preparadas, mecheros, cambio de etiquetas y hurtos combinados. Además, aborda los controles clave de seguridad, incluyendo rondines, conteo de críticos y jaula de productos sensibles.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Seguridad-Recepción-CD.jpg" alt="Recepciones del Centro de Distribución"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#646464"></span>Seguridad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Recepciones del Centro de Distribución</div>
-          <div class="course-bajada">Control y trazabilidad en la recepción de mercadería desde el CD.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2013</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Personal de Seguridad, Jefes y Gerentes de Sucursal.</div>
-        <div class="course-desc">Este curso explica el procedimiento de recepción de móviles provenientes del Centro de Distribución, abordando el control de documentación, precintos y obleas, la descarga de pallets y cubetas, el registro de ingresos y egresos, y el uso de PDA y GPS para asegurar una recepción ordenada y con trazabilidad completa.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Seguridad-Recepción-Prov.jpg" alt="Recepción de proveedores"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#646464"></span>Seguridad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Recepción de proveedores</div>
-          <div class="course-bajada">Procedimiento estandarizado para una recepción de mercadería precisa y controlada.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2016</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Gerentes, Jefes de Operaciones, Jefes de Recepción, Fiscalizadores y Recepcionistas.</div>
-        <div class="course-desc">Este curso explica el procedimiento completo para la recepción de mercadería de proveedores directos. Aborda las etapas de carga de orden de compra, descarga y control de mercadería, registro de embalajes, confirmación del pedido, gestión de devoluciones y salida del proveedor.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Seguridad-Puestos.jpg" alt="Seguridad - Puestos en Sucursal"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#646464"></span>Seguridad</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Seguridad - Puestos en Sucursal</div>
-          <div class="course-bajada">Funciones, responsabilidades y controles del personal de Seguridad en la sucursal.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2021</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Gerentes, Jefes de Operaciones, Jefes de Recepción, Fiscalizadores y Recepcionistas.</div>
-        <div class="course-desc">Este curso presenta los distintos puestos del sector Seguridad en la sucursal y sus responsabilidades operativas. Aborda funciones de control en recepción, salón, cajas, electro, bodega, playa y CCTV, incluyendo manejo de productos críticos, alarmado, rondines y coordinación con otras áreas.</div>
-      </div>
-      </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ZONA E! -->
-  <div class="category-block anim-fadein" id="zonae" style="--cat-light:#AAAAAA;--cat-main:#1D1D1B;">
-    <div class="cat-header">
-      <span class="cat-header-pill" style="background:var(--cat-zonae)">ZonaE!</span>
-      <span class="cat-header-count" style="background:var(--cat-zonae)">4 cursos</span>
-    </div>
-    <div class="courses-grid">
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Zona-Anfitriones.jpg" alt="Anfitriones de Zona E!"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1D1D1B"></span>ZonaE!</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Anfitriones de Zona E!</div>
-          <div class="course-bajada">Herramientas y conocimientos clave para brindar una experiencia de juego segura, ordenada y de calidad.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2014</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Anfitriones de Zona E, Cajeros y Jefes.</div>
-        <div class="course-desc">Este curso está orientado a anfitriones de Zona Entretenimientos y desarrolla las funciones clave del rol. Aborda las tareas diarias, la apertura y cierre del sector, el cruce de seguridad y el conocimiento del funcionamiento y ubicación de los juegos, con foco en la atención al cliente y el trato cordial.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Zona-Camareros.jpg" alt="Camareros de Zona Gourmet"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1D1D1B"></span>ZonaE!</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Camareros de Zona Gourmet</div>
-          <div class="course-bajada">Cómo brindar una excelente atención al cliente en el sector de Zona Gourmet.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Camareros de Zona Gourmet.</div>
-        <div class="course-desc">Este curso introduce a los camareros en la experiencia Zona Gourmet y los objetivos del rol. Aborda los preparativos de inicio y cierre de jornada y desarrolla los 16 pasos de la atención al cliente, desde la bienvenida y toma del pedido hasta el cobro, la despedida y la limpieza final de la mesa.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Zona-E_-Cocineros.jpg" alt="Cocineros de Zona Gourmet"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1D1D1B"></span>ZonaE!</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Cocineros de Zona Gourmet</div>
-          <div class="course-bajada">Preparación, higiene y estándares de cocina para el sector Zona Gourmet.</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-largo">Curso largo</span></div>
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Cocineros de Zona Gourmet.</div>
-        <div class="course-desc">Curso orientado a los cocineros del sector Zona Gourmet, con foco en los procedimientos de preparación, higiene alimentaria y estándares de presentación. Se abordan las tareas de apertura y cierre de cocina, manipulación segura de alimentos y normas operativas del sector.</div>
-      </div>
-      </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-cover"><img class="course-cover-img" loading="lazy" src="img/Zona-Cumples.jpg" alt="Cumpleaños de Zona E!"><div class="course-cover-overlay"><div class="course-cat-chip"><span class="course-cat-chip-dot" style="background:#1D1D1B"></span>ZonaE!</div></div></div>
-        <div class="course-body">
-          <div class="course-title">Curso de Cumpleaños de Zona E!</div>
-          <div class="course-bajada">¡Todo lo que necesitás para ser un gran anfitrión en los Cumples de Zona E!</div>
-          <div class="course-meta"><span class="meta-tag anio">📅 2024</span><span class="meta-tag duracion dur-medio">Curso medio</span></div>
-          
-          <div class="course-desc">En este curso conocerás las propuestas de Zona Cumples y cómo comunicarlas de forma clara a los clientes. Se desarrollan las 5 etapas del cumple —venta, contratación, preparación, día del evento y post cumple— y las tareas clave en cada una, reforzando la importancia de una atención al cliente de calidad.
-      <div class="course-card-extra">
-        <div class="course-personas"><strong>Personas asignadas:</strong> Anfitriones de Zona E.</div>
-      </div></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  </div><!-- /page-wrap -->
-</div><!-- /courses-section -->
 
 <!-- ═══════════════════════════════════
      CONTACTO
@@ -1650,7 +321,7 @@
      aria-hidden="true">
   <div class="modal" id="modalBox">
     <div class="modal-cover">
-      <img id="modalImg" src="" alt="" loading="lazy">
+      <img id="modalImg" src="" alt="" loading="lazy" onerror="this.style.background='#e4e8f0'; this.removeAttribute('src');">
       <div class="modal-cover-overlay" aria-hidden="true"></div>
       <div class="modal-cover-cat" id="modalCat" aria-hidden="true"></div>
       <button class="modal-close" id="modalClose" aria-label="Cerrar detalle del curso">✕</button>
