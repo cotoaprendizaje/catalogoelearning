@@ -100,7 +100,7 @@ const CURSOS = [
 ];
 /**
  * CATÁLOGO E-LEARNING — COTO CICSA
- * app.js · Edición 2026 · v26
+ * app.js · Edición 2026 · v27
  *
  * ────────────────────────────────────────────────
  * ESTRUCTURA DE ESTE ARCHIVO:
