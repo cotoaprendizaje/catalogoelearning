@@ -42,7 +42,7 @@ const CURSOS = [
   { categoria: "frescos2", titulo: "Armado de picadas", bajada: "Claves para preparar picadas con buena presentación, peso y frescura.", anio: 2020, duracion: "corto", imagen: "img/Frescos2-Picadas.jpg", personas: "Personal de Quesos y Fiambres.", descripcion: "Este curso enseña el armado de picadas de quesos y fiambres, considerando bandeja, cuchillo y orden de armado. Aborda peso estándar, variedades, durabilidad y criterios de higiene y presentación, para lograr una exhibición atractiva y asegurar la aptitud de consumo en góndola." },
   { categoria: "frescos2", titulo: "Corte de quesos", bajada: "Técnicas de corte, manipulación y exhibición para quesos y dulces, priorizando seguridad, calidad y presentación.", anio: 2020, duracion: "medio", imagen: "img/Frescos2-Quesos.jpg", personas: "Personal de Quesos y Fiambres.", descripcion: "Este curso enseña técnicas correctas de corte y manipulación de quesos y dulces, diferenciando tipos, herramientas y formas de presentación. Aborda criterios de seguridad, exhibición con o sin bandeja y cuidados específicos de cada variedad, para garantizar productos frescos y bien presentados en góndola." },
   { categoria: "frescos2", titulo: "Pescadería – Exhibición de productos", bajada: "Todo lo que necesitás saber para conservar, exhibir y ordenar los productos de pescadería.", anio: 2025, duracion: "largo", imagen: "img/Frescos2-Exhibición-Pesca.jpg", personas: "Personal del sector Pescadería.", descripcion: "Este curso enseña cómo conservar y presentar correctamente los productos del sector en mostrador, heladeras y pozos. Se abordan temperaturas de referencia, clasificación, almacenamiento seguro, uso del hielo, rotación y normas de higiene, junto con prácticas a evitar para preservar la calidad." },
-  { categoria: "elaborados", titulo: "Elaboración de facturas", bajada: "Lineamientos de elaboración y presentación de facturas en el sector Elaborados.", anio: 2020, duracion: "medio", imagen: "img/Elaborados-Facturas.jpg", personas: "", descripcion: "" },
+  { categoria: "elaborados", titulo: "Elaboración de facturas", bajada: "Lineamientos de elaboración y presentación de facturas en el sector Elaborados.", anio: 2020, duracion: "medio", imagen: "img/Elaborados-Facturas.jpg", personas: "Personal administrativo del sector Elaborados.", descripcion: "En este curso aprenderemos los lineamientos para la elaboración y presentación de facturas en el sector Elaborados, incluyendo los formatos requeridos, plazos de presentación y la documentación de respaldo necesaria." },
   { categoria: "seg-higiene", titulo: "Inducción en Seguridad e Higiene - Conceptos básicos", bajada: "Una introducción fundamental para cuidar lo más importante: las personas.", anio: 2018, duracion: "largo", imagen: "img/SegeHig-Inducción.jpg", personas: "Todo el personal de la compañía.", descripcion: "Este curso introduce los conceptos básicos de Seguridad e Higiene laboral en COTO. Aborda actos y condiciones inseguras, el uso correcto de los elementos de protección personal, señalizaciones, tipos de matafuegos y el rol de la ART, con el objetivo de concientizar sobre la prevención de riesgos." },
   { categoria: "seg-higiene", titulo: "Uso seguro del montacargas", bajada: "Las 5 normas básicas para operar montacargas sin riesgos.", anio: 2018, duracion: "corto", imagen: "img/SegeHig-Montacargas.jpg", personas: "Todo el personal de la compañía.", descripcion: "Este curso presenta las cinco normas básicas para el uso seguro del montacargas. Aborda la verificación previa del equipo, las condiciones de operación, las medidas de seguridad durante su uso y cómo actuar ante fallas o situaciones de riesgo, con el objetivo de prevenir accidentes." },
   { categoria: "salon", titulo: "Salón - Flujo del hueco", bajada: "Gestión diaria de faltantes en góndola para asegurar stock, orden y correcta exhibición.", anio: 2022, duracion: "medio", imagen: "img/Salón-Flujo-del-Hueco.jpg", personas: "Jefes y colaboradores del Salón de Ventas.", descripcion: "Este curso desarrolla el proceso diario de relevamiento y gestión de faltantes en góndola mediante PDA y reportes de GESCOM. Explica la identificación de huecos del jefe, del sistema y coincidentes, el uso de obleas, la detección de falsos stocks y los ajustes correspondientes." },
@@ -56,7 +56,7 @@ const CURSOS = [
   { categoria: "mantenimiento", titulo: "Puesta a punto de la máquina ULMA", bajada: "Ajustes clave para garantizar el funcionamiento seguro y eficiente de la empaquetadora.", anio: 2020, duracion: "corto", imagen: "img/Mantenimiento-Puesta-Punto-ULMA.jpg", personas: "Técnicos de mantenimiento de sucursales.", descripcion: "Este curso enseña a realizar la puesta a punto de los principales componentes de la máquina ULMA, como el empujador, las plegadoras y el carro de alimentación. Se abordan los ajustes necesarios para asegurar un funcionamiento seguro, preciso y continuo del equipo." },
   { categoria: "mantenimiento", titulo: "Seguridad Eléctrica", bajada: "Fundamentos y prácticas para prevenir riesgos y trabajar con electricidad de forma segura.", anio: 2015, duracion: "largo", imagen: "img/Mantenimiento-Seguridad-Eléctrica.jpg", personas: "Personal de mantenimiento y colaboradores que realizan tareas con riesgo eléctrico.", descripcion: "Este curso aborda los riesgos asociados al trabajo con instalaciones eléctricas, como descargas, incendios y explosiones. Enseña el uso correcto de EPP, elementos de maniobra y salvataje, y repasa las 5 reglas de oro de la seguridad eléctrica." },
   { categoria: "mantenimiento", titulo: "Vehículos Industriales", bajada: "Checklist y procedimientos para operar de forma segura los principales vehículos del depósito.", anio: 2025, duracion: "corto", imagen: "img/Mantenimiento-Vehículos-Industriales.jpg", personas: "Personal de Mantenimiento y todos quienes utilizan vehículos industriales.", descripcion: "Este curso enseña a realizar los checklists diarios de los tres vehículos industriales principales: autoelevador, apilador y zorra eléctrica. Se aprende a detectar fallas a tiempo, garantizar un uso seguro, prevenir accidentes y prolongar la vida útil de los equipos." },
-  { categoria: "medico", titulo: "Prevención cardiovascular", bajada: "Cómo reducir los riesgos de enfermedades cardiovasculares desde el cuidado diario.", anio: 2023, duracion: "medio", imagen: "img/ServicioMédico-Prevención-Cardio.jpg", personas: "", descripcion: "" },
+  { categoria: "medico", titulo: "Prevención cardiovascular", bajada: "Cómo reducir los riesgos de enfermedades cardiovasculares desde el cuidado diario.", anio: 2023, duracion: "medio", imagen: "img/ServicioMédico-Prevención-Cardio.jpg", personas: "Todos los colaboradores de COTO.", descripcion: "Este curso brinda herramientas prácticas para reducir los riesgos de enfermedades cardiovasculares desde el cuidado diario. Veremos hábitos saludables, factores de riesgo, signos de alerta y la importancia de los controles médicos periódicos." },
   { categoria: "calidad", titulo: "Inspecciones – Conceptos básicos", bajada: "Qué hacer cuando llega una inspección: procedimientos y responsabilidades.", anio: 2012, duracion: "medio", imagen: "img/Calidad-Inspecciones.jpg", personas: "Gerentes de sucursal y postulantes a Gerencia.", descripcion: "Este curso presenta los tipos de inspecciones que pueden realizar organismos gubernamentales en la sucursal y los eventos más frecuentes asociados a estos controles. Además, se detalla el procedimiento a seguir ante una inspección y las responsabilidades del gerente durante todo el proceso." },
   { categoria: "calidad", titulo: "Productos ECONOR", bajada: "Uso de equipamientos y productos ECONOR para los procesos de higiene en la sucursal.", anio: 2023, duracion: "medio", imagen: "img/Calidad-ECONOR.jpg", personas: "Personal operativo de carnicería, pescadería, verdulería, panadería, cocina, rotisería, fiambrería y salón.", descripcion: "Este curso brinda los conocimientos necesarios para utilizar correctamente los equipamientos y productos del sistema ECONOR en los procesos de higiene de la sucursal. Se abordan los distintos productos de limpieza, su aplicación específica y el funcionamiento de los dosificadores." },
   { categoria: "calidad", titulo: "Productos VICTORY", bajada: "Uso correcto de productos y equipamiento para los procesos de limpieza y desinfección.", anio: 2024, duracion: "medio", imagen: "img/Calidad-VICTORY.jpg", personas: "Personal operativo de carnicería, pescadería, verdulería, panadería, cocina, rotisería, fiambrería y salón.", descripcion: "Este curso aborda el uso adecuado de los productos del sistema VICTORY según sector, superficie y tipo de suciedad, junto con el funcionamiento de los dosificadores. Además, se trabajan los pasos correctos de limpieza y desinfección y el uso responsable de los EPP." },
@@ -66,7 +66,7 @@ const CURSOS = [
   { categoria: "coto-digital", titulo: "Auxiliares administrativos de Coto Digital - Parte 2", bajada: "Procesos avanzados, devoluciones y resolución de reclamos.", anio: 2025, duracion: "medio", imagen: "img/CotoDigital-Aux2.jpg", personas: "Auxiliares, postulantes a jefes y jefes de Coto Digital.", descripcion: "En este curso vamos a profundizar en los procesos administrativos del sector y el uso correcto de las herramientas de gestión. Te capacitarás en el control de órdenes de compra, diferencias de precio y manejo de la caja de devoluciones. También veremos la mesa de rendiciones y la gestión de reclamos CRM." },
   { categoria: "coto-digital", titulo: "Coto Digital - Conceptos básicos", bajada: "Cómo funciona el circuito completo de compra y entrega en Coto Digital.", anio: 2020, duracion: "medio", imagen: "img/CotoDigital-Básico.jpg", personas: "Gerentes y personal del sector Coto Digital.", descripcion: "Este curso presenta el circuito completo de un pedido en Coto Digital, desde la compra realizada por el cliente en la web o la app hasta la entrega final y la rendición. Se repasan los roles involucrados y los pasos clave del proceso, como el armado, el cobro, la logística de distribución y la entrega del pedido." },
   { categoria: "coto-digital", titulo: "Coto Digital – Picking", bajada: "Los primeros pasos para comenzar el armado de pedidos en Coto Digital.", anio: 2020, duracion: "medio", imagen: "img/CotoDigital-Picking.jpg", personas: "Gerentes y personal de Coto Digital.", descripcion: "Este curso introduce el concepto de picking y los elementos necesarios para el armado de pedidos en Coto Digital. Se aborda el uso de la PDA, la carga y seguimiento de la orden, la preparación del carrito y la lógica de armado según el layout del salón." },
-  { categoria: "seg-info", titulo: "Seguridad de la Información", bajada: "Lineamientos esenciales para proteger la información y los sistemas de la compañía.", anio: 2024, duracion: "largo", imagen: "img/Seg-Info.jpg", personas: "", descripcion: "" },
+  { categoria: "seg-info", titulo: "Seguridad de la Información", bajada: "Lineamientos esenciales para proteger la información y los sistemas de la compañía.", anio: 2024, duracion: "largo", imagen: "img/Seg-Info.jpg", personas: "Todos los colaboradores con acceso a sistemas y datos de la compañía.", descripcion: "Lineamientos esenciales para proteger la información y los sistemas de COTO. Abordaremos contraseñas seguras, identificación de intentos de phishing, manejo responsable de datos sensibles y buenas prácticas en el uso de dispositivos y plataformas corporativas." },
   { categoria: "flota", titulo: "Choferes de Flota Propia", bajada: "Todo lo que necesitás saber para desempeñarte como chofer de la Flota Propia de Coto Digital.", anio: 2025, duracion: "largo", imagen: "img/FlotaPropia-Choferes.jpg", personas: "Choferes de Flota Propia de Coto Digital.", descripcion: "Este curso recorre la jornada del chofer de Flota Propia, desde la asignación del móvil y los controles previos hasta la entrega de pedidos y el cierre del día. Se abordan las responsabilidades del rol, la documentación requerida, el checklist del vehículo y los procedimientos ante imprevistos." },
   { categoria: "no-alimentos", titulo: "Coto Hogar – Conceptos básicos", bajada: "Funcionamiento del sector, surtido y criterios para una correcta exhibición.", anio: 2013, duracion: "largo", imagen: "img/NOA-CotoHogar.jpg", personas: "Repositores de Salón, Jefes de Salón Mixto, Jefes de Coto Hogar y Gerentes de sucursal.", descripcion: "Este curso brinda una visión integral del sector Coto Hogar. Presenta sus departamentos y líneas de productos, los procesos de recepción y almacenamiento de mercadería, la lógica de surtido por sucursal y los criterios definidos para la exhibición en salón." },
   { categoria: "no-alimentos", titulo: "NOA - Prioridad de reposición", bajada: "Herramientas y criterios para asegurar stock y góndolas completas en No Alimentos.", anio: 2024, duracion: "medio", imagen: "img/NOA-Prioridad-Reposición.jpg", personas: "Colaboradores del sector NOA, Electro y responsables de Salón.", descripcion: "Este curso explica cómo utilizar el Reporte de Prioridad de Reposición para identificar productos agotados o con bajo stock y definir qué reponer primero en góndola. Introduce el concepto de MEG (Mínimo de Exhibición en Góndola) y los modos de consulta del reporte." },
@@ -100,7 +100,7 @@ const CURSOS = [
 ];
 /**
  * CATÁLOGO E-LEARNING — COTO CICSA
- * app.js · Edición 2026 · v21
+ * app.js · Edición 2026 · v26
  *
  * ────────────────────────────────────────────────
  * ESTRUCTURA DE ESTE ARCHIVO:
@@ -118,7 +118,7 @@ const CURSOS = [
 
 /* ─── Detección de entorno ─────────────────────────────────── */
 const IS_TOUCH = window.matchMedia('(hover: none)').matches;
-const IS_MOBILE = () => window.innerWidth < 1024;
+const IS_MOBILE = () => window.innerWidth < 901;
 
 /* Labels de duración legibles */
 const DURACION_LABELS = {
@@ -142,18 +142,18 @@ function renderCatnav() {
     'seg-info':     'Seg. Info',
     'gestion':      'Gest. Comercial',
     'atencion':     'Atención',
+    'administracion': 'Adm.',
+    'no-alimentos': 'No Aliment.',
+    'mantenimiento': 'Manten.',
+    'coto-digital': 'Coto Dig.',
   };
 
-  const totalCursos = CURSOS.length;
-
   let html = `<span class="catnav-label" aria-hidden="true">Ir a:</span>`;
-  html += `<a href="#indice">📋 Índice</a>`;
   html += CATEGORIAS.map(cat => {
     const count = CURSOS.filter(c => c.categoria === cat.id).length;
     const label = SHORT_NAMES[cat.id] || cat.nombre;
-    return `<a href="#${cat.id}" title="${count} curso${count !== 1 ? 's' : ''}">${cat.emoji} ${escHtml(label)}</a>`;
+    return `<a href="#${cat.id}" title="${escAttr(cat.nombre)} (${count} curso${count !== 1 ? 's' : ''})">${cat.emoji} ${escHtml(label)}</a>`;
   }).join('');
-  html += `<span class="catnav-count"><strong id="searchCountNum">${totalCursos}</strong> cursos</span>`;
 
   scroll.innerHTML = html;
 }
@@ -222,6 +222,10 @@ function renderCourses() {
 
 function renderCard(c, cat) {
   const durLabel = c.duracion ? (DURACION_LABELS[c.duracion] || c.duracion) : '';
+  const hasPersonas = (c.personas || '').trim() !== '';
+  const hasDesc = (c.descripcion || '').trim() !== '';
+  const showExtra = hasPersonas || hasDesc;
+
   return `
     <article class="course-card" tabindex="0" role="button" aria-label="Ver detalle de ${escAttr(c.titulo)}">
       <div class="course-cover">
@@ -243,13 +247,14 @@ function renderCard(c, cat) {
         <div class="course-title">${escHtml(c.titulo)}</div>
         <div class="course-bajada">${escHtml(c.bajada)}</div>
         <div class="course-meta">
-          ${c.anio ? `<span class="meta-tag anio" title="Última revisión de contenido"><span class="meta-tag-label">Rev.</span> ${c.anio}</span>` : ''}
+          ${c.anio ? `<span class="meta-tag anio" title="Año de revisión del contenido"><span class="meta-tag-label">Año</span> ${c.anio}</span>` : ''}
           ${c.duracion ? `<span class="meta-tag duracion dur-${c.duracion}">${escHtml(durLabel)}</span>` : ''}
         </div>
+        ${showExtra ? `
         <div class="course-card-extra">
-          <div class="course-personas"><strong>Personas asignadas:</strong> ${escHtml(c.personas)}</div>
-          <div class="course-desc">${escHtml(c.descripcion)}</div>
-        </div>
+          ${hasPersonas ? `<div class="course-personas"><strong>Personas asignadas:</strong> ${escHtml(c.personas)}</div>` : ''}
+          ${hasDesc ? `<div class="course-desc">${escHtml(c.descripcion)}</div>` : ''}
+        </div>` : ''}
       </div>
     </article>
   `;
@@ -269,16 +274,22 @@ function escAttr(s) {
 
 /* ============================================================
    initTheme — modo oscuro con persistencia y sistema
+   Hay dos toggles: el FAB flotante (siempre visible) y
+   el del menú hamburguesa mobile.
 ============================================================ */
 function initTheme() {
-  const toggle = document.getElementById('darkToggle');
-  const icon = document.getElementById('darkIcon');
+  const fab = document.getElementById('darkFab');
+  const fabIcon = document.getElementById('darkFabIcon');
+  const mobileBtn = document.getElementById('mobileDarkToggle');
+  const mobileIcon = document.getElementById('mobileDarkIcon');
   const root = document.documentElement;
 
   function setTheme(dark) {
     root.setAttribute('data-theme', dark ? 'dark' : 'light');
-    toggle?.setAttribute('aria-checked', String(dark));
-    if (icon) icon.textContent = dark ? '🌙' : '☀️';
+    fab?.setAttribute('aria-pressed', String(dark));
+    mobileBtn?.setAttribute('aria-pressed', String(dark));
+    if (fabIcon) fabIcon.textContent = dark ? '🌙' : '☀️';
+    if (mobileIcon) mobileIcon.textContent = dark ? '🌙' : '☀️';
     try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (_) {}
   }
 
@@ -288,10 +299,8 @@ function initTheme() {
   setTheme(saved === 'dark' || (!saved && prefersDark));
 
   const handleToggle = () => setTheme(root.getAttribute('data-theme') !== 'dark');
-  toggle?.addEventListener('click', handleToggle);
-  toggle?.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleToggle(); }
-  });
+  fab?.addEventListener('click', handleToggle);
+  mobileBtn?.addEventListener('click', handleToggle);
 }
 
 
@@ -337,7 +346,7 @@ function initMobileMenu() {
 
   /* Si la ventana se agranda a desktop, cerrar el menú */
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024 && menu.classList.contains('open')) close();
+    if (window.innerWidth >= 901 && menu.classList.contains('open')) close();
   });
 }
 
@@ -385,8 +394,23 @@ function initModal() {
     if (title) modalTitle.textContent = title.textContent;
     if (bajada) modalBajada.textContent = bajada.textContent;
     if (meta) modalMeta.innerHTML = meta.innerHTML;
-    if (pers) modalPers.innerHTML = pers.innerHTML;
-    if (desc) modalDesc.textContent = desc.textContent;
+
+    // Personas: ocultar bloque si no hay datos en la card
+    if (pers) {
+      modalPers.innerHTML = pers.innerHTML;
+      modalPers.style.display = '';
+    } else {
+      modalPers.style.display = 'none';
+    }
+
+    // Descripción: ocultar si no hay datos
+    if (desc) {
+      modalDesc.textContent = desc.textContent;
+      modalDesc.style.display = '';
+    } else {
+      modalDesc.textContent = '';
+      modalDesc.style.display = 'none';
+    }
 
     modalBody.style.setProperty('--modal-color', color);
 
@@ -515,16 +539,6 @@ function initSearch() {
       total += visible;
     });
 
-    /* Actualizar contador del catnav con micro-animación */
-    const countEl = document.getElementById('searchCountNum');
-    if (countEl) {
-      countEl.classList.add('bump');
-      setTimeout(() => {
-        countEl.textContent = total;
-        countEl.classList.remove('bump');
-      }, 150);
-    }
-
     if (noResults) noResults.classList.toggle('visible', total === 0);
     applyHighlight(rawQuery.trim());
   }
@@ -549,7 +563,10 @@ function initSearch() {
         applyFilters(input.value);  // inmediato al apretar Enter
         const first = document.querySelector('.course-card:not(.hidden)');
         if (first) {
-          const offset = 68 + 56 + 8;
+          // Offset dinámico del topnav + catnav (catnav puede tener 1 o 2 líneas)
+          const navH = document.querySelector('.topnav')?.offsetHeight || 68;
+          const catH = document.querySelector('.catnav')?.offsetHeight || 56;
+          const offset = navH + catH + 8;
           window.scrollTo({ top: first.getBoundingClientRect().top + window.scrollY - offset, behavior: 'smooth' });
           first.style.transition = 'box-shadow 0.3s';
           first.style.boxShadow = '0 0 0 3px rgba(9,123,179,0.4)';
@@ -632,6 +649,34 @@ function initCatnav() {
   }, { rootMargin: '-25% 0px -65% 0px' });
 
   catSections.forEach(s => observer.observe(s));
+}
+
+
+/* ============================================================
+   initStickyHeights — mide topnav + catnav y setea CSS vars
+   Garantiza que scroll-margin-top sea correcto aunque el catnav
+   tenga 1 o 2 líneas (depende del ancho de la pantalla).
+============================================================ */
+function initStickyHeights() {
+  const topnav = document.querySelector('.topnav');
+  const catnav = document.querySelector('.catnav');
+  const root = document.documentElement;
+
+  function update() {
+    const navH = topnav?.offsetHeight || 68;
+    const catH = catnav?.offsetHeight || 56;
+    root.style.setProperty('--nav-h', navH + 'px');
+    root.style.setProperty('--catnav-h', catH + 'px');
+  }
+
+  update();
+  /* Recalcula cuando cambia el viewport (responsive: el catnav puede
+     pasar de 2 líneas a 1 al ensanchar/angostar) */
+  window.addEventListener('resize', () => {
+    /* Debounce simple para evitar trabajo en cada pixel */
+    clearTimeout(window.__stickyResizeTimer);
+    window.__stickyResizeTimer = setTimeout(update, 100);
+  });
 }
 
 
@@ -748,7 +793,11 @@ function initScroll() {
 let isScrollingToSection = false;
 
 function initSmoothScroll() {
-  const OFFSET = 68 + 56;
+  function getOffset() {
+    const navH = document.querySelector('.topnav')?.offsetHeight || 68;
+    const catH = document.querySelector('.catnav')?.offsetHeight || 56;
+    return navH + catH;
+  }
 
   document.addEventListener('click', e => {
     const anchor = e.target.closest('a[href^="#"]');
@@ -759,7 +808,7 @@ function initSmoothScroll() {
     if (!target) return;
     e.preventDefault();
     isScrollingToSection = true;
-    const top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+    const top = target.getBoundingClientRect().top + window.scrollY - getOffset();
     window.scrollTo({ top, behavior: 'smooth' });
     setTimeout(() => { isScrollingToSection = false; }, 700);
   });
@@ -781,6 +830,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initModal();
   initSearch();
   initCatnav();
+  initStickyHeights();
   initNavActive();
   initAnimations();
   initScroll();

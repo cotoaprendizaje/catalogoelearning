@@ -39,12 +39,21 @@
 <!-- Barra de progreso de scroll -->
 <div id="scroll-progress" aria-hidden="true"></div>
 
-<!-- Botón volver arriba -->
-<button class="back-top" id="backTop" aria-label="Volver al inicio">
-  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-    <path d="M7 11V3M3 7l4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</button>
+<!-- Botones flotantes (abajo a la derecha) -->
+<div class="fab-stack">
+  <button class="fab fab-dark"
+          id="darkFab"
+          aria-label="Cambiar modo oscuro"
+          aria-pressed="false"
+          title="Cambiar modo claro/oscuro">
+    <span id="darkFabIcon" aria-hidden="true">☀️</span>
+  </button>
+  <button class="fab back-top" id="backTop" aria-label="Volver al inicio">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M7 11V3M3 7l4-4 4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+</div>
 
 
 <!-- ═══════════════════════════════════
@@ -71,16 +80,6 @@
     </nav>
 
     <div class="topnav-right">
-      <div class="dark-toggle-wrap">
-        <span class="dark-toggle-icon" id="darkIcon" aria-hidden="true">☀️</span>
-        <div class="dark-toggle"
-             id="darkToggle"
-             role="switch"
-             aria-checked="false"
-             aria-label="Modo oscuro"
-             tabindex="0"></div>
-      </div>
-
       <div class="topnav-search-wrap" role="search">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
@@ -94,7 +93,7 @@
                aria-label="Buscar curso en el catálogo">
       </div>
 
-      <!-- Botón hamburguesa (solo mobile) -->
+      <!-- Botón hamburguesa (siempre visible) -->
       <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
@@ -106,17 +105,25 @@
 <!-- Menú mobile desplegable -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <div class="mobile-menu-inner">
-    <div class="mobile-search-wrap" role="search">
-      <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-        <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M9.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <label for="mobileSearch" class="sr-only">Buscar curso</label>
-      <input type="search"
-             id="mobileSearch"
-             placeholder="Buscar curso…"
-             autocomplete="off"
-             aria-label="Buscar curso en el catálogo">
+    <div class="mobile-search-row">
+      <div class="mobile-search-wrap" role="search">
+        <svg width="16" height="16" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+          <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9.5 9.5l2.5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <label for="mobileSearch" class="sr-only">Buscar curso</label>
+        <input type="search"
+               id="mobileSearch"
+               placeholder="Buscar curso…"
+               autocomplete="off"
+               aria-label="Buscar curso en el catálogo">
+      </div>
+      <button class="mobile-dark-toggle"
+              id="mobileDarkToggle"
+              aria-label="Cambiar modo oscuro"
+              title="Cambiar modo oscuro">
+        <span id="mobileDarkIcon" aria-hidden="true">☀️</span>
+      </button>
     </div>
     <nav class="mobile-menu-nav" aria-label="Menú principal (mobile)">
       <a href="#hero">🏠 Inicio</a>
@@ -247,7 +254,7 @@
   <div class="contact-inner">
 
     <div class="contact-text">
-      <h2 id="contacto-title">¿Tenés alguna<br><em>consulta</em> sobre la formación?</h2>
+      <h2 id="contacto-title">¿Tenés alguna<br><em>consulta</em> sobre tu formación?</h2>
       <p>Si necesitás acceso a algún curso, tenés dudas sobre la plataforma o querés proponer un nuevo contenido, contactate con el equipo de Aprendizaje de RRHH.</p>
       <div class="contact-pills">
         <a href="mailto:Capacitacion@redcoto.com.ar" class="contact-pill primary">

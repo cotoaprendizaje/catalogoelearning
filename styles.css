@@ -38,7 +38,7 @@
   --page-max:  1380px;
   --page-pad:  3rem;
   --nav-h:     68px;
-  --catnav-h:  56px;
+  --catnav-h:  90px;   /* puede tener 2 líneas en desktop */
 
   /* Colores de categoría — paleta oficial */
   --cat-cajas:        #F02850;
@@ -188,38 +188,6 @@ body {
   outline-offset: 2px;
 }
 
-/* Dark mode toggle */
-.dark-toggle-wrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.dark-toggle-icon { font-size: 11px; color: rgba(255,255,255,0.5); flex-shrink: 0; }
-.dark-toggle {
-  width: 36px;
-  height: 20px;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 20px;
-  position: relative;
-  cursor: pointer;
-  flex-shrink: 0;
-  transition: background 0.3s;
-}
-.dark-toggle::before {
-  content: '';
-  position: absolute;
-  top: 2px; left: 2px;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.6);
-  transition: transform 0.3s, background 0.3s;
-}
-.dark-toggle:focus-visible {
-  outline: 2px solid var(--blue-light);
-  outline-offset: 2px;
-}
-
 /* Buscador en topnav */
 .topnav-search-wrap {
   position: relative;
@@ -333,7 +301,8 @@ body {
 .hero-h1-bold {
   font-size: clamp(3rem, 6vw, 5.2rem);
   font-weight: 700;
-  line-height: 0.95;
+  line-height: 1.05;             /* antes 0.95 — cortaba descenders como la "g" */
+  padding-bottom: 0.08em;        /* espacio extra abajo para el degradé */
   letter-spacing: -3px;
   background: linear-gradient(135deg, #fff 0%, #fff 40%, #F02850 70%, #097bb3 100%);
   -webkit-background-clip: text;
@@ -451,35 +420,48 @@ body {
    05. CATNAV (barra de categorías sticky)
 ============================================================ */
 .catnav {
-  background: rgba(255,255,255,0.98);
+  background: #fff;            /* opaco, no translúcido */
   border-bottom: 1px solid var(--gray-light);
-  position: sticky;
+  position: sticky;            /* ¡CRÍTICO! sin esto el catnav no se queda fijo arriba */
   top: var(--nav-h);
   z-index: 100;
-  box-shadow: 0 1px 8px rgba(31,45,70,0.06);
-  padding: 8px 0;
-  position: relative; /* para las flechas */
-}
-
-/* Soporte backdrop-filter donde está disponible */
-@supports (backdrop-filter: blur(12px)) {
-  .catnav { backdrop-filter: blur(12px); }
+  box-shadow: 0 1px 8px rgba(31,45,70,0.08);
+  padding: 6px 0;
+  /* nota: las flechas usan position:absolute - funcionan porque sticky crea contexto de posicionamiento */
 }
 
 #catnav-scroll {
-  max-width: unset;
-  padding: 0.5rem 2.5rem;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0.4rem 1rem;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;             /* Desktop: permite 2 líneas */
   align-items: center;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  touch-action: pan-x;
-  -webkit-overflow-scrolling: touch;
+  gap: 5px;
+  row-gap: 5px;
+  /* Límite duro: 2 líneas máximo. Si no entran todas, scroll vertical interno */
+  max-height: calc(2 * 30px + 0.8rem + 5px);  /* 2 pills + padding + gap */
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
-#catnav-scroll::-webkit-scrollbar { display: none; }
+#catnav-scroll::-webkit-scrollbar { width: 6px; height: 0; }
+#catnav-scroll::-webkit-scrollbar-thumb { background: var(--gray-light); border-radius: 4px; }
+
+/* En mobile: scroll horizontal de 1 línea, sin límite vertical */
+@media (max-width: 900px) {
+  #catnav-scroll {
+    flex-wrap: nowrap;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 2.5rem;
+  }
+  #catnav-scroll::-webkit-scrollbar { display: none; }
+}
 
 .catnav-label {
   font-size: 10px; font-weight: 700;
@@ -492,20 +474,10 @@ body {
   align-self: center;
 }
 
-.catnav-count {
-  flex-shrink: 0;
-  font-size: 12px;
-  color: var(--gray);
-  white-space: nowrap;
-  padding-left: 1rem;
-  align-self: center;
-}
-.catnav-count strong { color: var(--navy); font-weight: 700; }
-
 #catnav-scroll a {
-  font-size: 11.5px; font-weight: 500;
-  padding: 4px 11px;
-  border-radius: 20px;
+  font-size: 11px; font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 18px;
   text-decoration: none;
   color: var(--navy);
   background: transparent;
@@ -513,51 +485,49 @@ body {
   transition: background 0.15s, border-color 0.15s, color 0.15s;
   white-space: nowrap;
   flex-shrink: 0;
+  line-height: 1.4;
 }
 #catnav-scroll a:hover  { background: var(--cream); border-color: var(--gray); }
 #catnav-scroll a.active { background: var(--navy-dark); color: #fff; border-color: var(--navy-dark); }
 #catnav-scroll a:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; }
 
-/* Flechas catnav */
+/* Flechas catnav (sólo en mobile, donde hay scroll horizontal) */
 .catnav-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  background: rgba(255,255,255,0.95);
-  border: 1px solid var(--gray-light);
-  border-radius: 50%;
-  width: 28px; height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: var(--navy);
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(31,45,70,0.12);
-  transition: background 0.15s, opacity 0.2s;
-  padding: 0;
-  line-height: 1;
+  display: none;
 }
-.catnav-arrow:hover { background: var(--cream); }
-.catnav-arrow.hidden { opacity: 0; pointer-events: none; }
-.catnav-arrow:focus-visible { outline: 2px solid var(--blue-light); }
-.catnav-arrow-left  { left: 6px; }
-.catnav-arrow-right { right: 6px; }
-
-/* Contador de búsqueda */
-#searchCountNum {
-  display: inline-block;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+@media (max-width: 900px) {
+  .catnav-arrow {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid var(--gray-light);
+    border-radius: 50%;
+    width: 28px; height: 28px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--navy);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(31,45,70,0.12);
+    transition: background 0.15s, opacity 0.2s;
+    padding: 0;
+    line-height: 1;
+  }
+  .catnav-arrow:hover { background: var(--cream); }
+  .catnav-arrow.hidden { opacity: 0; pointer-events: none; }
+  .catnav-arrow:focus-visible { outline: 2px solid var(--blue-light); }
+  .catnav-arrow-left  { left: 6px; }
+  .catnav-arrow-right { right: 6px; }
 }
-#searchCountNum.bump { transform: scale(1.2); opacity: 0.7; }
-
 
 /* ============================================================
    06. BOTÓN HAMBURGUESA + MENÚ MOBILE
 ============================================================ */
 .nav-burger {
-  display: none;
+  display: none;          /* oculto por defecto (desktop) */
   width: 38px; height: 38px;
   border: 1px solid rgba(255,255,255,0.18);
   background: rgba(255,255,255,0.06);
@@ -624,8 +594,15 @@ body {
   pointer-events: auto;
 }
 
+.mobile-search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
 .mobile-search-wrap {
   position: relative;
+  flex: 1;
+  min-width: 0;
 }
 .mobile-search-wrap svg {
   position: absolute;
@@ -650,6 +627,26 @@ body {
 #mobileSearch:focus {
   background: rgba(255,255,255,0.13);
   border-color: var(--blue-light);
+}
+
+.mobile-dark-toggle {
+  flex-shrink: 0;
+  width: 44px; height: 44px;
+  border: 1.5px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.mobile-dark-toggle:hover { background: rgba(255,255,255,0.14); }
+.mobile-dark-toggle:active { transform: scale(0.95); }
+.mobile-dark-toggle:focus-visible {
+  outline: 2px solid var(--blue-light);
+  outline-offset: 2px;
 }
 
 .mobile-menu-nav {
@@ -682,7 +679,7 @@ body {
   background: #fff;
   border-bottom: 1px solid var(--gray-light);
   padding: 3rem 0 3.5rem;
-  scroll-margin-top: calc(var(--nav-h) + var(--catnav-h) + 8px);
+  scroll-margin-top: calc(var(--nav-h) + var(--catnav-h) + 16px);
 }
 
 .index-heading {
@@ -1159,24 +1156,40 @@ body {
   font-size: 13.5px; color: #4a5d78;
   line-height: 1.7; margin-bottom: 1.8rem;
 }
-.modal-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
 
 .modal-btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 10px 20px; border-radius: 10px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 18px; border-radius: 10px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 13.5px; font-weight: 600;
+  font-size: 13px; font-weight: 600;
   text-decoration: none; cursor: pointer;
   border: none;
   transition: opacity 0.15s, transform 0.15s, background 0.15s;
+  justify-content: center;
 }
 .modal-btn:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; }
 .modal-btn-secondary {
   background: var(--cream); color: var(--navy);
   border: 1.5px solid var(--gray-light);
+  flex: 0 0 auto;
 }
 .modal-btn-secondary:hover { background: var(--gray-light); }
-#modalWaBtn { flex: 1; min-width: 200px; }
+
+/* Botón WhatsApp del modal: tamaño contenido, no expandido al 100% */
+#modalWaBtn {
+  flex: 0 1 auto;
+  background: #25D366;
+  color: #fff;
+}
+#modalWaBtn:hover { background: #1ebe5d; }
+#modalWaBtn .card-wa-label span:first-child { font-size: 13px; font-weight: 600; }
+#modalWaBtn .card-wa-label span:last-child  { font-size: 10.5px; font-weight: 400; opacity: 0.9; }
 
 
 /* ============================================================
@@ -1186,7 +1199,7 @@ body {
   background: #fff;
   border-top: 1px solid var(--gray-light);
   padding: 5rem 0;
-  scroll-margin-top: calc(var(--nav-h) + var(--catnav-h) + 8px);
+  scroll-margin-top: calc(var(--nav-h) + var(--catnav-h) + 16px);
 }
 .contact-inner {
   max-width: var(--page-max); margin: 0 auto;
@@ -1297,23 +1310,42 @@ footer {
   pointer-events: none;
 }
 
-/* Back to top */
-.back-top {
-  position: fixed; bottom: 2rem; right: 2rem;
+/* Pila de botones flotantes (abajo derecha) */
+.fab-stack {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 500;
+  align-items: flex-end;
+}
+
+.fab {
   width: 42px; height: 42px;
   background: var(--navy-dark);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.85);
   cursor: pointer;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.3s, transform 0.2s, background 0.2s;
-  z-index: 500;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  transition: transform 0.2s, background 0.2s;
 }
+.fab:hover { background: var(--blue-dark); transform: translateY(-2px); }
+.fab:focus-visible { outline: 2px solid var(--blue-light); outline-offset: 2px; }
+
+/* El dark toggle es siempre visible */
+.fab-dark { opacity: 1; }
+
+/* Back-top aparece al hacer scroll */
+.back-top { opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.2s, background 0.2s; }
 .back-top.visible  { opacity: 1; pointer-events: auto; }
-.back-top:hover    { background: var(--blue-dark); color: #fff; transform: translateY(-2px); }
-.back-top:focus-visible { outline: 2px solid var(--blue-light); }
+.back-top svg { color: rgba(255,255,255,0.85); }
 
 /* Fade-in de secciones */
 .anim-fadein { opacity: 0; }
@@ -1375,9 +1407,6 @@ footer {
 
 [data-theme="dark"] .meta-tag.anio   { background: rgba(255,255,255,0.08); color: #c8d6f0; }
 
-[data-theme="dark"] .dark-toggle     { background: rgba(255,255,255,0.25); }
-[data-theme="dark"] .dark-toggle::before { transform: translateX(16px); background: #fff; }
-
 [data-theme="dark"] .search-highlight { background: #f0b429; color: #0d1520; }
 
 [data-theme="dark"] #navSearch        { background: rgba(255,255,255,0.05); color: #e2e8f5; }
@@ -1407,7 +1436,7 @@ footer {
 
 /* Tablet ancho */
 @media (max-width: 900px) {
-  :root { --page-pad: 1.25rem; }
+  :root { --page-pad: 1.25rem; --catnav-h: 56px; }
   .hero-inner          { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-stats-panel    { grid-template-columns: repeat(4, 1fr); }
   .hero-stat-card.wide { grid-column: auto; }
@@ -1421,12 +1450,12 @@ footer {
   .index-grid          { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* Mostrar hamburguesa en mobile y tablet angosto */
+/* En mobile y tablet angosto: ocultar menú y buscador del topnav (van en el menú hamburguesa) */
 @media (max-width: 900px) {
-  .nav-burger         { display: block; }
-  .topnav-menu        { display: none; }
-  .topnav-search-wrap { display: none; }
-  .topnav-inner       { justify-content: space-between; gap: 0.75rem; }
+  .nav-burger                       { display: block; }
+  .topnav-menu                      { display: none !important; }
+  .topnav-search-wrap               { display: none !important; }
+  .topnav-inner                     { justify-content: space-between; gap: 0.75rem; }
 }
 
 /* Mobile */
@@ -1482,7 +1511,7 @@ footer {
    15. PRINT
 ============================================================ */
 @media print {
-  .topnav, .catnav, .back-top, #scroll-progress,
+  .topnav, .catnav, .fab-stack, #scroll-progress,
   .contact-section, .mobile-menu, .mobile-menu-backdrop,
   .nav-burger { display: none !important; }
   .hero        { padding: 1rem 0; background: #fff !important; }
