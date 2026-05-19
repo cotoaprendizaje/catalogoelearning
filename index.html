@@ -11,18 +11,17 @@
   <meta property="og:title"       content="Catálogo e-learning — COTO CICSA">
   <meta property="og:description" content="Formación interna para el equipo COTO CICSA · Edición 2026">
   <meta property="og:type"        content="website">
-  <meta property="og:image"       content="img/logo-coto.png">
+  <meta property="og:image"       content="https://cotoaprendizaje.github.io/catalogoelearning/img/logo-coto.png">
   <meta property="og:image:alt"   content="Logo de COTO CICSA">
   <meta property="og:locale"      content="es_AR">
   <meta property="og:site_name"   content="COTO CICSA — Aprendizaje">
-  <!-- og:url: completar con la URL final cuando esté publicado -->
-  <!-- <meta property="og:url" content="https://..."> -->
+  <meta property="og:url" content="https://cotoaprendizaje.github.io/catalogoelearning/">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Catálogo e-learning — COTO CICSA">
   <meta name="twitter:description" content="Formación interna para el equipo COTO CICSA · Edición 2026">
-  <meta name="twitter:image"       content="img/logo-coto.png">
+  <meta name="twitter:image"       content="https://cotoaprendizaje.github.io/catalogoelearning/img/logo-coto.png">
 
   <meta name="theme-color"        content="#162036">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23162036'/><text y='23' x='16' text-anchor='middle' font-size='18' font-family='Arial' font-weight='bold' fill='white'>e</text></svg>">
@@ -182,9 +181,9 @@
         <p>Áreas de formación</p>
       </div>
       <div class="hero-stat-card" style="--accent: linear-gradient(to right, #00C88C, #1EAADC);">
-        <strong class="stat-counter" data-count="20000" data-prefix="+" data-separator=".">0</strong>
+        <strong class="stat-counter" data-count="19800" data-prefix="+" data-separator=".">0</strong>
         <span>usuarios</span>
-        <p>Activos en la plataforma</p>
+        <p>Colaboradores en la plataforma</p>
       </div>
       <div class="hero-stat-card" style="--accent: linear-gradient(to right, #F0A032, #F0BE00);">
         <strong class="stat-counter" data-count="2026">0</strong>
@@ -328,7 +327,7 @@
      aria-hidden="true">
   <div class="modal" id="modalBox">
     <div class="modal-cover">
-      <img id="modalImg" src="" alt="" loading="lazy" onerror="this.style.background='#e4e8f0'; this.removeAttribute('src');">
+      <img id="modalImg" src="" alt="" loading="lazy">
       <div class="modal-cover-overlay" aria-hidden="true"></div>
       <div class="modal-cover-cat" id="modalCat" aria-hidden="true"></div>
       <button class="modal-close" id="modalClose" aria-label="Cerrar detalle del curso">✕</button>
@@ -373,5 +372,12 @@
 <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 
 <script src="app.js" defer></script>
+<script>
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+</script>
 </body>
 </html>

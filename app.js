@@ -87,9 +87,9 @@ const CURSOS = [
   { categoria: "gestion", titulo: "Gestión Comercial – Conceptos básicos", bajada: "Conocé los procesos, herramientas y estrategias que permiten organizar y optimizar la gestión comercial en Coto.", anio: 2014, duracion: "largo", imagen: "img/GestComercial-Básico.jpg", personas: "Personal de los sectores comerciales y de Administración.", descripcion: "Este curso introduce los fundamentos de la gestión comercial, abordando mantenimiento de artículos, uso de PLU, definición de surtido y reposición, manejo y control de stock, valorización y análisis de precios y competencia, utilizando herramientas internas y sistemas de la compañía." },
   { categoria: "gestion", titulo: "Panel de control", bajada: "Conocé cómo usar Panel de Control para visualizar y tomar decisiones basadas en las ventas.", anio: 2018, duracion: "corto", imagen: "img/GestComercial-Panel-Control.jpg", personas: "Personal del área Comercial.", descripcion: "Este curso introduce la aplicación Panel de Control en iPad, enseñando a visualizar y comparar ventas a distintos niveles: cadena, sucursal, grupo comercial, departamento, clase, proveedor y PLU. Se aprende a navegar la información e interpretar indicadores para optimizar la toma de decisiones comerciales." },
   { categoria: "gestion", titulo: "Uso de aplicativo – Sucursales 3", bajada: "Herramienta clave para controlar mercadería, rotación y surtido de tu sucursal desde el iPad.", anio: 2019, duracion: "corto", imagen: "img/GestComercial-Suc3.jpg", personas: "Gerentes de Sucursal.", descripcion: "Este curso muestra cómo utilizar el módulo Surtido de Sucursales3 en iPad para consultar y analizar datos de stock, frecuencia de venta y disponibilidad de productos. Se trabaja la interpretación de la información para tomar decisiones estratégicas sobre surtido, rotación y reposición." },
-  { categoria: "atencion", titulo: "Contrato de la tarjeta TCI", bajada: "Guía práctica para asistir al cliente en la correcta confección del contrato de la Tarjeta TCI.", anio: 0, duracion: "", imagen: "img/TCI-Contrato.jpg", personas: "Jefes y Auxiliares de Cajas.", descripcion: "En este curso aprenderemos cómo asistir al cliente en la correcta confección del contrato de la Tarjeta TCI y su documentación anexa. Abordaremos las partes del contrato, las firmas requeridas, los controles a realizar y el correcto cierre, envío y resguardo del legajo en la sucursal." },
-  { categoria: "atencion", titulo: "Uso del aplicativo – Tarjeta TCI", bajada: "Gestión integral de solicitudes y consultas de Tarjeta TCI desde el aplicativo.", anio: 0, duracion: "", imagen: "img/TCI-Aplicativo.jpg", personas: "Jefes y Auxiliares de Cajas.", descripcion: "En este curso aprenderemos a utilizar el aplicativo TCI para gestionar solicitudes de Tarjeta TCI, desde la carga de clientes hasta el seguimiento de estados y la atención de consultas frecuentes. Abordaremos cómo actuar ante los distintos resultados de una solicitud para acompañar correctamente cada trámite." },
-  { categoria: "atencion", titulo: "Prevención de LA/FT/FP", bajada: "Gestión de riesgos y cumplimiento normativo para Tarjeta Coto Inteligente.", anio: 0, duracion: "", imagen: "img/TCI-Prevencion.jpg", personas: "Directores, gerentes, jefaturas y colaboradores cuyas funciones impacten en la TCI.", descripcion: "En este curso conocerás las obligaciones, responsabilidades y procedimientos vinculados a la prevención del Lavado de Activos (LA), Financiación del Terrorismo (FT) y de la Proliferación (FP). Su objetivo es asegurar el cumplimiento del marco legal y regulatorio vigente en la operatoria de la Tarjeta Coto Inteligente." },
+  { categoria: "atencion", titulo: "Contrato de la tarjeta TCI", bajada: "Guía práctica para asistir al cliente en la correcta confección del contrato de la Tarjeta TCI.", imagen: "img/TCI-Contrato.jpg", personas: "Jefes y Auxiliares de Cajas.", descripcion: "En este curso aprenderemos cómo asistir al cliente en la correcta confección del contrato de la Tarjeta TCI y su documentación anexa. Abordaremos las partes del contrato, las firmas requeridas, los controles a realizar y el correcto cierre, envío y resguardo del legajo en la sucursal." },
+  { categoria: "atencion", titulo: "Uso del aplicativo – Tarjeta TCI", bajada: "Gestión integral de solicitudes y consultas de Tarjeta TCI desde el aplicativo.", imagen: "img/TCI-Aplicativo.jpg", personas: "Jefes y Auxiliares de Cajas.", descripcion: "En este curso aprenderemos a utilizar el aplicativo TCI para gestionar solicitudes de Tarjeta TCI, desde la carga de clientes hasta el seguimiento de estados y la atención de consultas frecuentes. Abordaremos cómo actuar ante los distintos resultados de una solicitud para acompañar correctamente cada trámite." },
+  { categoria: "atencion", titulo: "Prevención de LA/FT/FP", bajada: "Gestión de riesgos y cumplimiento normativo para Tarjeta Coto Inteligente.", imagen: "img/TCI-Prevencion.jpg", personas: "Directores, gerentes, jefaturas y colaboradores cuyas funciones impacten en la TCI.", descripcion: "En este curso conocerás las obligaciones, responsabilidades y procedimientos vinculados a la prevención del Lavado de Activos (LA), Financiación del Terrorismo (FT) y de la Proliferación (FP). Su objetivo es asegurar el cumplimiento del marco legal y regulatorio vigente en la operatoria de la Tarjeta Coto Inteligente." },
   { categoria: "seguridad", titulo: "Controles para modalidades de hurto", bajada: "Prevención, detección y control de hurtos en sucursal.", anio: 2024, duracion: "largo", imagen: "img/Seguridad-Modalidades-Hurto.jpg", personas: "Personal de Seguridad en sucursales.", descripcion: "Este curso desarrolla las principales modalidades de hurto detectadas en cajas, salón y otras cadenas, como changos con doble fondo, bolsas preparadas, mecheros, cambio de etiquetas y hurtos combinados. Además, aborda los controles clave de seguridad, incluyendo rondines, conteo de críticos y jaula de productos sensibles." },
   { categoria: "seguridad", titulo: "Recepciones del Centro de Distribución", bajada: "Control y trazabilidad en la recepción de mercadería desde el CD.", anio: 2013, duracion: "largo", imagen: "img/Seguridad-Recepción-CD.jpg", personas: "Personal de Seguridad, Jefes y Gerentes de Sucursal.", descripcion: "Este curso explica el procedimiento de recepción de móviles provenientes del Centro de Distribución, abordando el control de documentación, precintos y obleas, la descarga de pallets y cubetas, el registro de ingresos y egresos, y el uso de PDA y GPS para asegurar una recepción ordenada y con trazabilidad completa." },
   { categoria: "seguridad", titulo: "Recepción de proveedores", bajada: "Procedimiento estandarizado para una recepción de mercadería precisa y controlada.", anio: 2016, duracion: "medio", imagen: "img/Seguridad-Recepción-Prov.jpg", personas: "Gerentes, Jefes de Operaciones, Jefes de Recepción, Fiscalizadores y Recepcionistas.", descripcion: "Este curso explica el procedimiento completo para la recepción de mercadería de proveedores directos. Aborda las etapas de carga de orden de compra, descarga y control de mercadería, registro de embalajes, confirmación del pedido, gestión de devoluciones y salida del proveedor." },
@@ -213,29 +213,30 @@ function renderCourses() {
         </div>
 
         <div class="courses-grid">
-          ${cursos.map(c => renderCard(c, cat)).join('')}
+          ${cursos.map(c => renderCard(c, cat, CURSOS.indexOf(c))).join('')}
         </div>
       </div>
     `;
   }).join('');
 }
 
-function renderCard(c, cat) {
+function renderCard(c, cat, id) {
   const durLabel = c.duracion ? (DURACION_LABELS[c.duracion] || c.duracion) : '';
   const hasPersonas = (c.personas || '').trim() !== '';
   const hasDesc = (c.descripcion || '').trim() !== '';
   const showExtra = hasPersonas || hasDesc;
 
+  const imgSrc = c.imagen.replace(/\.jpe?g$/i, '.webp');
+
   return `
-    <article class="course-card" tabindex="0" role="button" aria-label="Ver detalle de ${escAttr(c.titulo)}">
+    <article class="course-card" tabindex="0" role="button" data-curso-id="${id}" aria-label="Ver detalle de ${escAttr(c.titulo)}">
       <div class="course-cover">
         <img class="course-cover-img"
-             src="${escAttr(c.imagen)}"
+             src="${escAttr(imgSrc)}"
              alt="${escAttr(c.alt || c.titulo)}"
              width="837" height="507"
              loading="lazy"
-             decoding="async"
-             onerror="this.style.background='#e4e8f0'; this.removeAttribute('src');">
+             decoding="async">
         <div class="course-cover-overlay">
           <div class="course-cat-chip">
             <span class="course-cat-chip-dot" style="background:${cat.color};"></span>
@@ -376,36 +377,36 @@ function initModal() {
   let lastFocused = null;
 
   function open(card) {
-    const img = card.querySelector('.course-cover-img');
-    const title = card.querySelector('.course-title');
-    const bajada = card.querySelector('.course-bajada');
-    const meta = card.querySelector('.course-meta');
-    const pers = card.querySelector('.course-personas');
-    const desc = card.querySelector('.course-desc');
-    const chip = card.querySelector('.course-cat-chip');
-    const catBlock = card.closest('.category-block');
-    const color = catBlock?.style.getPropertyValue('--cat-main') || '#097bb3';
+    const id = Number(card.dataset.cursoId);
+    const c = CURSOS[id];
+    if (!c) return;
+    const cat = CATEGORIAS.find(x => x.id === c.categoria);
+    const color = cat?.color || '#097bb3';
 
-    if (img) {
-      modalImg.src = img.src;
-      modalImg.alt = title?.textContent || '';
-    }
-    if (chip) modalCat.innerHTML = chip.innerHTML;
-    if (title) modalTitle.textContent = title.textContent;
-    if (bajada) modalBajada.textContent = bajada.textContent;
-    if (meta) modalMeta.innerHTML = meta.innerHTML;
+    modalImg.src = c.imagen.replace(/\.jpe?g$/i, '.webp');
+    modalImg.alt = c.alt || c.titulo;
 
-    // Personas: ocultar bloque si no hay datos en la card
-    if (pers) {
-      modalPers.innerHTML = pers.innerHTML;
+    modalCat.innerHTML = cat
+      ? `<span class="course-cat-chip-dot" style="background:${color};"></span> ${escHtml(cat.nombre)}`
+      : '';
+    modalTitle.textContent = c.titulo;
+    modalBajada.textContent = c.bajada || '';
+
+    const durLabel = c.duracion ? (DURACION_LABELS[c.duracion] || c.duracion) : '';
+    modalMeta.innerHTML = [
+      c.anio ? `<span class="meta-tag anio" title="Año de revisión del contenido"><span class="meta-tag-label">Año</span> ${c.anio}</span>` : '',
+      c.duracion ? `<span class="meta-tag duracion dur-${c.duracion}">${escHtml(durLabel)}</span>` : ''
+    ].join('');
+
+    if (c.personas && c.personas.trim()) {
+      modalPers.innerHTML = `<strong>Personas asignadas:</strong> ${escHtml(c.personas)}`;
       modalPers.style.display = '';
     } else {
       modalPers.style.display = 'none';
     }
 
-    // Descripción: ocultar si no hay datos
-    if (desc) {
-      modalDesc.textContent = desc.textContent;
+    if (c.descripcion && c.descripcion.trim()) {
+      modalDesc.textContent = c.descripcion;
       modalDesc.style.display = '';
     } else {
       modalDesc.textContent = '';
@@ -414,9 +415,8 @@ function initModal() {
 
     modalBody.style.setProperty('--modal-color', color);
 
-    if (waBtn && title) {
-      const name = title.textContent?.trim() || 'este curso';
-      const msg = encodeURIComponent(`Hola, me interesa realizar este curso e-learning: "${name}". ¿Me podés dar más información?`);
+    if (waBtn) {
+      const msg = encodeURIComponent(`Hola, me interesa realizar este curso e-learning: "${c.titulo}". ¿Me podés dar más información?`);
       waBtn.href = `https://wa.me/5491170819432?text=${msg}`;
     }
 
@@ -661,6 +661,7 @@ function initStickyHeights() {
   const topnav = document.querySelector('.topnav');
   const catnav = document.querySelector('.catnav');
   const root = document.documentElement;
+  let resizeTimer = null;
 
   function update() {
     const navH = topnav?.offsetHeight || 68;
@@ -670,12 +671,11 @@ function initStickyHeights() {
   }
 
   update();
-  /* Recalcula cuando cambia el viewport (responsive: el catnav puede
-     pasar de 2 líneas a 1 al ensanchar/angostar) */
+  /* Recalcula cuando cambia el viewport: el catnav puede pasar
+     de 2 líneas a 1 al ensanchar/angostar */
   window.addEventListener('resize', () => {
-    /* Debounce simple para evitar trabajo en cada pixel */
-    clearTimeout(window.__stickyResizeTimer);
-    window.__stickyResizeTimer = setTimeout(update, 100);
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(update, 100);
   });
 }
 
@@ -816,6 +816,22 @@ function initSmoothScroll() {
 
 
 /* ============================================================
+   initImageFallback — placeholder gris si una imagen falla.
+   Delegado para evitar onerror inline (CSP-friendly).
+============================================================ */
+function initImageFallback() {
+  document.addEventListener('error', e => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    if (img.dataset.fallbackApplied === '1') return;
+    img.dataset.fallbackApplied = '1';
+    img.style.background = '#e4e8f0';
+    img.removeAttribute('src');
+  }, true);
+}
+
+
+/* ============================================================
    INICIALIZACIÓN
 ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -835,4 +851,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimations();
   initScroll();
   initSmoothScroll();
+  initImageFallback();
 });
