@@ -853,3 +853,76 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initImageFallback();
 });
+
+/* ============================================================
+   GOOGLE ANALYTICS 4 - EVENTOS PERSONALIZADOS
+   ID: G-31Y26ZHHZZ
+============================================================ */
+function gaEvent(name, params) {
+  if (typeof gtag === 'undefined') return;
+  gtag('event', name, params);
+}
+
+function initAnalytics() {
+  /* -- 1. Curso abierto en modal -- */
+  document.addEventListener('click', e => {
+    const card = e.target.closest('.course-card');
+    if (!card) return;
+    const id  = Number(card.dataset.cursoId);
+    const c   = CURSOS[id];
+    if (!c) return;
+    const cat = CATEGORIAS.find(x => x.id === c.categoria);
+    gaEvent('ver_curso', {
+      course_name:     c.titulo,
+      course_category: cat?.nombre || c.categoria,
+    });
+  });
+
+  /* -- 2. Click en WhatsApp desde el modal -- */
+  document.getElementById('modalWaBtn')?.addEventListener('click', () => {
+    const title = document.getElementById('modalTitle')?.textContent?.trim();
+    gaEvent('click_whatsapp', {
+      course_name: title || 'desconocido',
+      origen: 'modal',
+    });
+  });
+
+  /* -- 3. Descarga del PDF -- */
+  document.querySelectorAll('a[href*="catalogo.pdf"]').forEach(el => {
+    el.addEventListener('click', () => {
+      gaEvent('descargar_pdf', { metodo: 'link' });
+    });
+  });
+
+  /* -- 4. Busqueda (desktop y mobile) -- */
+  ['navSearch', 'mobileSearch'].forEach(id => {
+    const input = document.getElementById(id);
+    if (!input) return;
+    let timer;
+    input.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const q = input.value.trim();
+        if (q.length > 2) gaEvent('busqueda', { termino: q });
+      }, 1000);
+    });
+  });
+
+  /* -- 5. Navegacion por categorias (catnav) -- */
+  document.querySelectorAll('.catnav-inner a').forEach(link => {
+    link.addEventListener('click', () => {
+      gaEvent('navegar_categoria', {
+        categoria: link.textContent?.trim().replace(/^\S+\s*/, '') || link.dataset.cat
+      });
+    });
+  });
+
+  /* -- 6. Modo oscuro/claro -- */
+  document.getElementById('darkFab')?.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    gaEvent('cambiar_tema', { tema: isDark ? 'claro' : 'oscuro' });
+  });
+}
+
+/* Inicializar analytics junto con el resto de la app */
+document.addEventListener('DOMContentLoaded', initAnalytics);
