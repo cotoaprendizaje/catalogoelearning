@@ -9,7 +9,7 @@
  * Para invalidar el cache después de editar cursos, subí CACHE_VERSION.
  */
 
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const SHELL_CACHE = `shell-${CACHE_VERSION}`;
 const IMG_CACHE = `img-${CACHE_VERSION}`;
 
@@ -20,6 +20,14 @@ const SHELL_FILES = [
   './styles.css',
   './img/logo-coto.png',
   './img/logo-rrhh.png',
+  './fonts/Faible-Black.woff2',
+  './fonts/Faible-Bold.woff2',
+  './fonts/Faible-Medium.woff2',
+  './fonts/Faible-Regular.woff2',
+  './fonts/Roboto-Regular.woff2',
+  './fonts/Roboto-Medium.woff2',
+  './fonts/Roboto-Bold.woff2',
+  './fonts/Roboto-Italic.woff2',
 ];
 
 self.addEventListener('install', event => {

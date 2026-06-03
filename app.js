@@ -391,7 +391,7 @@ function initModal() {
     const c = CURSOS[id];
     if (!c) return;
     const cat = CATEGORIAS.find(x => x.id === c.categoria);
-    const color = cat?.color || '#097bb3';
+    const color = cat?.color || '#006EA0';
 
     modalImg.src = c.imagen.replace(/\.jpe?g$/i, '.webp');
     modalImg.alt = c.alt || c.titulo;
